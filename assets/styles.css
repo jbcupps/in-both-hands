@@ -551,6 +551,8 @@ hr { border: 0; }
   border-bottom: 1px solid var(--rule);
 }
 .chapter:last-child { border-bottom: 0; }
+/* Chapters without an illustration read full-width instead of leaving an empty art column. */
+.chapter--no-art { grid-template-columns: 1fr; }
 
 .chapter__art {
   margin: 0;

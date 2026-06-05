@@ -1,0 +1,44 @@
+name: Notify readers of a new chapter
+
+# Manual trigger ONLY. This workflow never runs on its own — it sends no email
+# until you open the Actions tab, click "Run workflow", and fill in the title.
+# It also does nothing until the three repo secrets below are set
+# (see docs/notifications.md).
+on:
+  workflow_dispatch:
+    inputs:
+      chapter_title:
+        description: "What to announce (e.g. Chapter Five — Two Stops Past)"
+        required: true
+      chapter_url:
+        description: "Link for readers"
+        required: false
+        default: "https://www.thelitroom.com/#chapters"
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send the digest
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          from: In Both Hands <${{ secrets.GMAIL_USERNAME }}>
+          # The visible recipient is you; readers are BCC'd so they never see
+          # each other's addresses. NOTIFY_RECIPIENTS is a comma-separated list.
+          to: ${{ secrets.GMAIL_USERNAME }}
+          bcc: ${{ secrets.NOTIFY_RECIPIENTS }}
+          subject: "In Both Hands — ${{ github.event.inputs.chapter_title }} is up"
+          body: |
+            A new chapter of In Both Hands is live.
+
+            ${{ github.event.inputs.chapter_title }}
+            ${{ github.event.inputs.chapter_url }}
+
+            — thelitroom.com
+
+            (You're receiving this because you asked to hear when new chapters post.)

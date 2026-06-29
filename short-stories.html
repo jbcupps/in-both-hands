@@ -18,6 +18,23 @@
 <link rel="stylesheet" href="assets/styles.css" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
+<style>
+  /* Section headers inside the longer, structured stories (the Court verdicts). */
+  .chapter__body-inner h4 {
+    font-family: var(--ui);
+    font-size: var(--text-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-fade);
+    font-weight: 500;
+    margin: var(--s-7) 0 var(--s-4);
+    padding-top: var(--s-4);
+    border-top: 1px solid var(--rule);
+  }
+  /* Stories with an illustration that fails to load shouldn't leave an empty column. */
+  .chapter__art img { background: var(--paper-3); }
+</style>
+
 <!-- Vercel Analytics (Web Analytics + Speed Insights) -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -49,9 +66,9 @@
     <div class="eyebrow">Short fiction</div>
     <h2 class="section__title">Short stories &amp; fairy tales.</h2>
     <p class="section__lede">
-      Shorter pieces — guardian tales, a night-bloom fairy story, the opening
-      of a science-fiction series, and a folkloric reading of an old classic.
-      Click a title to read it.
+      Shorter pieces — guardian tales, a night-bloom fairy story, two
+      Faerie-court verdicts, a science-fiction opener, and a turn through
+      cosmic horror. Click a title to read it.
     </p>
 
     <ol class="chapters">
@@ -168,7 +185,10 @@
       </li>
 
       <!-- THE UNSEELIE IN PETER PAN -->
-      <li class="chapter chapter--no-art" id="unseelie-peter-pan" data-reveal>
+      <li class="chapter" id="unseelie-peter-pan" data-reveal>
+        <figure class="chapter__art">
+          <img src="assets/images/story-peter-pan.jpg" alt="A sinister, leaf-clad Peter Pan under a full moon with a glowing Tinker Bell and the lost boys, a pirate ship in the mist behind" />
+        </figure>
         <div class="chapter__head">
           <div class="chapter__num">Folklore &amp; review · May 2025</div>
           <h3 class="chapter__title">The Unseelie in Peter Pan</h3>
@@ -187,6 +207,240 @@
             <p>Crucially, Barrie also captured the dangerous, capricious side of fairy folklore. In Scottish tradition, fairies (or sidhe, the daoine-sìth) were not all sweetness — many were tricksters or even malevolent (the "Unseelie Court"). Barrie echoes this. His fairies can be mischievous and deadly if offended: "Nearly all the nasty accidents you meet with in the Gardens [Kensington Gardens] occur because the fairies have taken an ill-will against you," the narrator warns, "and so it behoves you to be careful what you say about them…" If angered, "they will mischief you — stab you to death, or compel you to nurse their children, or turn you into something tedious, like an evergreen oak."</p>
             <p>This startling passage (drawn from <em>Peter Pan in Kensington Gardens</em>) could come straight from a Scottish folktale. It invokes the classic fairy practice of abducting humans — forcing a person to serve as a wet-nurse or servant in Fairyland — and of transformation enchantments, all staples of Celtic fairy lore.</p>
             <p>Tinker Bell herself, though tiny and charming, embodies the traditional fey "bad temperament": she grows murderously jealous of Wendy and actually plots to have Wendy shot with an arrow. One commentator notes Tink is "particularly cold-blooded in her machinations," a <em>"vicious little sprite"</em> true to old fairy tradition. Barrie excuses this extreme malice with a whimsical rationale — fairies are so small they can only feel one emotion at a time, so at times Tinker Bell is "all bad" — but the underlying idea of volatile, amoral fairy-creatures is pure folklore.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- THE HACKER -->
+      <li class="chapter" id="hacker" data-reveal>
+        <figure class="chapter__art">
+          <img src="assets/images/story-hacker.jpg" alt="A hooded figure working at a laptop in a dark server room, code glowing on the monitors behind" />
+        </figure>
+        <div class="chapter__head">
+          <div class="chapter__num">Faerie folklore · A Court verdict</div>
+          <h3 class="chapter__title">The Hacker</h3>
+          <p class="chapter__synopsis">
+            A notary of the Thorn Court is sent to judge which Court may claim
+            the man mortals call a monster — and finds, instead, a keeper of doors.
+          </p>
+          <button class="chapter__toggle" data-target="story-hacker" aria-expanded="false" aria-controls="story-hacker" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-hacker" hidden>
+          <div class="chapter__body-inner">
+            <p>They filed this petition under Trespass &amp; Hospitality, which is how the Courts pretend the modern world is still made of doors.</p>
+            <p>The seal was split—half white wax, half black—pressed together so tightly the seam looked like a scar. That meant both Courts had signed, which meant one of two things: either they were cooperating… or they were both afraid to be alone with the truth.</p>
+            <p>The folio smelled like ozone and printer toner and rain on hot asphalt. Inside: incident summaries, clipped headlines, threat intel that read like prophecy, and—tucked between them like a knife in a hymnbook—a single sheet of paper.</p>
+            <p>A contract. Not metaphorical. Literal. A scope-of-work letter with neat human signatures, dates, and a clause about "authorized testing."</p>
+            <p>Below it, in the old ink that doesn't dry so much as cling: <em>Determine which Court may claim him. Determine what he is.</em></p>
+            <p>And the mortal name—two words that make executives sweat and teenagers grin: <em>The Hacker.</em></p>
+            <p>I am Bracken-of-the-Index, notary to the Thorn Court, keeper of small truths and enforceable language. I have witnessed vows made to rivers. I have seen saints barter their shadows. I have recorded the kind of bargains that turn "forever" into a technical term.</p>
+            <p>And I will tell you the first thing the Courts already know and the mortals refuse to learn: a Hacker is not defined by what he can break. He is defined by what he refuses to break.</p>
+            <h4>I. The New Hedge: Where the World Became a Network of Thresholds</h4>
+            <p>In the old world, thresholds were wood and iron: doors, gates, windows, bread and salt. Hospitality law was simple: you could not enter without invitation, and once you were invited, you owed your host restraint.</p>
+            <p>Modern humans replaced those thresholds with prompts and protocols. Login screens. MFA challenges. Tokens. Certificates. Handshakes.</p>
+            <p>They stopped seeing them as thresholds because there is no satisfying click when you cross them. No smell of oiled hinges. Just a quiet change in what the world will allow you to do.</p>
+            <p>That blindness is why the Unseelie have been eating well. Ransomware that arrives without knocking. Phishing that wears a friend's face. Malware that moves like smoke through open windows nobody remembers leaving open.</p>
+            <p>And so both Courts took notice. The Seelie were furious—not because humans suffered, but because hospitality law was being violated on an industrial scale. The Seelie hate nothing like uninvited mess. The Unseelie were… interested. Hunger recognizes opportunity the way sharks recognize blood.</p>
+            <p>But the folio made one thing clear: the entity called The Hacker was not the one feeding. He was the one showing up after the feeding—sometimes before—to nail boards over the broken windows.</p>
+            <p>And mortals, in their brilliant simplicity, were calling him a monster for it.</p>
+            <h4>II. The Summons: A Human City with Fae Teeth</h4>
+            <p>I followed the folio's coordinates to a city that pretended it had outgrown myth. Glass towers. LED billboards. Wet streets reflecting neon like spilled ink. The kind of place where you can feel anonymous in a crowd and still be watched by a hundred cameras.</p>
+            <p>In the old stories, you find the hedge at the edge of a forest. Here, the hedge was behind a data center.</p>
+            <p>A building with no windows and too much security, squatting like a stone barrow in a business park. Fences. Cameras. Guards who looked bored enough to be dangerous. The humming throb of generators that sounded, if you listened closely, like a chant.</p>
+            <p>It wasn't the building that mattered. It was the air around it—dense with rules. Humans think security is locks. Fae know security is agreement.</p>
+            <p>I walked to the perimeter and found the threshold the way I always do: not by looking for a gate, but by looking for the place the world insists you stop. A keypad. A badge reader. A sign in bold letters: AUTHORIZED PERSONNEL ONLY.</p>
+            <p>That, in the old law, is a spoken ward. It means: invitation required.</p>
+            <p>I set my palm on the cold metal of the fence and spoke my name in the tongue beneath English. The air acknowledged me, then grudgingly shifted. A service door appeared where there had been only blank wall—unremarkable, utilitarian, the kind of door people forget to watch because it looks like it belongs to nothing.</p>
+            <p>Modern thresholds hide in plain sight. I entered.</p>
+            <h4>III. The First Rule: He Doesn't Enter Without Consent</h4>
+            <p>Inside, the world smelled like chilled air and hot dust. Server racks lined the room like upright coffins, each full of murmuring lives—human lives made into records, policies, payments, family photos, love letters, secrets.</p>
+            <p>Mortals think data is abstract. Fae know data is a person's shadow, pressed thin and stored in metal.</p>
+            <p>At the far end, under a dim work light, someone sat in a rolling chair with their back to me. Hood up. Shoulders relaxed. A laptop open, screen full of pale text like snowfall. The posture of someone who knows exactly how many exits are behind them.</p>
+            <p>"I'm not here to stop you," I said, because opening lines matter.</p>
+            <p>The figure didn't turn. "Then you're here to label me."</p>
+            <p>"Something like that."</p>
+            <p>A quiet laugh. Not cruel. Not amused. More like… tired. He finally swiveled around.</p>
+            <p>Mask? No. Not theatrical. Just a plain face, unremarkable enough to vanish in a crowd. The hood was not glamour. It was privacy. His eyes, though—his eyes had the sharp calm of someone who spends their life reading systems the way others read moods.</p>
+            <p>"The Courts sent you," he said.</p>
+            <p>"Both," I replied. "That rarely ends well."</p>
+            <p>"That's their problem." He tapped the screen once, and I heard it—faint, like a distant chime. A lock engaging. A door being closed. Not physical. Logical.</p>
+            <p>He had just set a boundary. I felt it in the air: a tightening, a narrowing of possibility. That was the first sign. Unseelie predators widen possibilities—more access, more spread, more chaos. This one reduced them.</p>
+            <p>He looked at the contract page from the folio, which I had placed on a nearby rack like an offering. "Authorized," he said. "Scope is clear. Time window is clear. No production impact clause is clear."</p>
+            <p>Then he looked at me, and there it was—the thing that makes a Hacker Seelie when the world assumes he's Unseelie. He said, flatly: "I don't touch what I'm not invited to touch."</p>
+            <p>Not "I can't." Not "I won't get caught." Not "I choose not to today." Invited. Hospitality law.</p>
+            <h4>IV. Exhibit One: He Leaves Receipts on Purpose</h4>
+            <p>A Hacker who feeds—Unseelie hunger—steals in silence. Leaves nothing but absence and confusion. Makes you doubt your memory of the world. This one… documented.</p>
+            <p>He opened a folder and showed me a report draft. It was clinical, precise, almost obnoxiously careful: what he observed, what it meant, how to reproduce it in controlled terms, how to fix it, how to verify the fix. And—crucially—what he did not do.</p>
+            <p>"I could have taken more," he said, matter-of-fact, like a carpenter noting he could have knocked out a load-bearing beam. "But that's not the point. The point is proof without harm."</p>
+            <p>Seelie justice loves proof. Seelie courts love records. They love things that can be pointed to later when someone tries to wriggle out of responsibility. Unseelie creatures love plausible deniability.</p>
+            <p>This Hacker did the opposite of what hunger does: he made the truth impossible to ignore. He handed mortals a mirror and forced them to look at the crack. That is Seelie behavior—uncomfortable, corrective, lawful.</p>
+            <h4>V. Exhibit Two: He Does Not Humiliate—He Repairs</h4>
+            <p>There is a kind of person who breaks locks for the joy of hearing the snap. A kind of person who wants to prove they can hurt you. That is Unseelie pride. It's not always evil. But it's always dangerous.</p>
+            <p>This Hacker moved like a medic, not a vandal. He spoke about misconfigurations the way a surgeon speaks about wounds: with respect for the body, contempt only for negligence. "It wasn't one bad choice," he said. "It was a pattern. Convenience treated as entitlement."</p>
+            <p>Then he did something that surprised me enough to make me still. He stood, walked to a whiteboard, and wrote a single line: <em>A system is a promise you keep at scale.</em></p>
+            <p>He capped the marker and looked back at me. "Hacking is just asking whether the promise holds."</p>
+            <p>That, right there, is the Seelie frame. Seelie are not "nice." They are consistent. They believe promises have weight and that a threshold exists to be respected, not to be mocked. He didn't revel in the cracks. He treated them like breaches of hospitality—an insult to the idea that a door should mean something.</p>
+            <h4>VI. The Unseelie Arrive: Hunger Wearing a Human Suit</h4>
+            <p>It happened while we spoke. A shift in the server hum. A brief stutter in the air. The kind of moment mortals call "network latency" and never realize they just felt a predator brush past.</p>
+            <p>The Hacker's expression didn't change much, but his gaze snapped to a log stream like a dog hearing a distant whistle. He typed—fast, economical, not showy. No cinematic hacking. No neon skulls. Just intent made visible.</p>
+            <p>"What is it?" I asked.</p>
+            <p>"Something uninvited," he said.</p>
+            <p>In my mind, I saw it the way my kind sees such things: not as code, but as behavior. A pressure trying doors. A slick hand testing latches. A hunger that doesn't knock because it doesn't believe in doors.</p>
+            <p>He didn't chase it through systems like a hunter. He did something subtler. He closed the world around it. Suddenly the air in the room felt narrower—as if the data center itself had become a hallway with fewer exits. He was building a fence. A Seelie fence.</p>
+            <p>And then—quietly, almost gently—he spoke aloud, not to me, but to the presence moving through the wires: "You're out of scope."</p>
+            <p>That shouldn't have meant anything. It was a human phrase. But in the mouth of a Seelie-aligned entity, it became a ward. <em>You have no invitation here.</em></p>
+            <p>The pressure recoiled. Not defeated—hunger rarely is—but blocked, redirected, denied easy meal.</p>
+            <p>If it had been a mortal intrusion, the Hacker would have captured it, studied it, neutralized it with a report. But this was not merely mortal. This was something that lived on attention and negligence. Unseelie.</p>
+            <p>And the Hacker treated it exactly as hospitality law demands: not with vengeance. With refusal.</p>
+            <h4>VII. Exhibit Three: He Honors the Old Law—And That's Why Everyone Fears Him</h4>
+            <p>Mortals fear Hackers because they don't understand the difference between ability and intent. The Courts fear Hackers because they understand it too well.</p>
+            <p>A Hacker who is Seelie is terrifying in a very specific way: he will not let you lie about your own doors. He forces accountability. And accountability is pain to anyone who has been living on shortcuts.</p>
+            <p>He showed me the simplest truth in the entire modern world: most breaches are not sorcery. They are hospitality violations. Someone left a door open and told themselves it "didn't matter." Someone accepted a guest without checking their name. Someone built a castle and forgot to guard the pantry.</p>
+            <p>And when the Unseelie came calling, the humans blamed the locksmith.</p>
+            <p>That is why the folio existed at all: because the Courts needed to decide whether to protect him, claim him, or silence him. Because Seelie-aligned Hackers are inconvenient. They make comfort expensive.</p>
+            <h4>VIII. The Verdict: The Hacker as Seelie</h4>
+            <p>I opened my book of thresholds and wrote by the cold light of the server LEDs. My iron pen scratched the page like a nail on glass. Here is what I recorded—my verdict, the reason both Courts brought me here:</p>
+            <p>The Hacker appears Unseelie because he trespasses, uncovers secrets, defeats barriers, and speaks in a language of exploitation. But his operational nature aligns with Seelie law: he requires invitation and scope; he does not enter unbidden. He respects thresholds as promises, and treats breaches as broken hospitality. He leaves receipts and mirrors—reports, evidence, and paths to repair—rather than feeding in silence. He reduces harm; he closes doors rather than widening them. He acts as a warden against true Unseelie hunger—malice that ignores permission entirely.</p>
+            <p>In short: he is not a thief. He is a keeper of doors in a world that forgot doors matter. Seelie. Not gentle, not warm, not interested in comforting lies. But lawful. Necessary.</p>
+            <h4>IX. The Moment That Made It Certain</h4>
+            <p>I finished writing and closed the book. The Hacker watched me, expression unreadable.</p>
+            <p>"Are you going to tell them?" he asked.</p>
+            <p>"I'll file the report," I said. "Truth is its own complication."</p>
+            <p>He nodded once. Then, after a beat, he said the quietest and most revealing thing of the night: "I wish humans understood that I'm on their side."</p>
+            <p>"That's not Seelie," I said, before I could stop myself.</p>
+            <p>He tilted his head. "No?"</p>
+            <p>"Seelie don't do 'sides,'" I replied. "They do rules."</p>
+            <p>Something like a smile ghosted at the edge of his mouth. "Then write this rule down, Notary." He leaned forward, eyes reflecting the pale glow of the logs like moonlight on water. And he spoke, not as a threat, not as a promise, but as a law—clean, cold, protective: "If you can't defend your threshold, you don't get to pretend it's yours."</p>
+            <p>Then he turned back to his screen and began closing doors no one remembered opening. Outside, the city kept glowing, loud and oblivious, confident that myths belonged to older centuries. And in the humming heart of its infrastructure, a Seelie warden kept the Unseelie from eating the world through its forgotten windows.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- JOHNNY APPLESEED -->
+      <li class="chapter" id="johnny-appleseed" data-reveal>
+        <figure class="chapter__art">
+          <img src="assets/images/story-johnny-appleseed.jpg" alt="A bearded man in a misty orchard at dusk, a pot on his head, offering an apple, a lantern and a basket of apples beside him" />
+        </figure>
+        <div class="chapter__head">
+          <div class="chapter__num">Faerie folklore · A Court verdict</div>
+          <h3 class="chapter__title">Johnny Appleseed</h3>
+          <p class="chapter__synopsis">
+            The same notary follows a barefoot man who plants apple trees across
+            the frontier — and learns that the most dangerous Unseelie look like gifts.
+          </p>
+          <button class="chapter__toggle" data-target="story-johnny" aria-expanded="false" aria-controls="story-johnny" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-johnny" hidden>
+          <div class="chapter__body-inner">
+            <p>They sent for me again when the leaves had gone dry and loud, the kind that betray every footstep like a gossip. A different petition this time—inked in cider-brown, sealed with wax that smelled faintly of crushed apple skins and iron.</p>
+            <p><em>Matter:</em> The Man Who Plants. <em>Name among mortals:</em> Johnny Appleseed. <em>Claimants:</em> A Seelie delegation (Hearth &amp; Harvest) and an Unseelie delegation (Thorn &amp; Hunger). <em>Task:</em> Determine his Court.</p>
+            <p>I am Bracken-of-the-Index, notary to the Thorn Court, keeper of the small truths that keep the big lies from collapsing. I have adjudicated duels between lightning and pine. I have witnessed marriages between grief and song. I have recorded bargains that lasted longer than mountains.</p>
+            <p>And I will tell you this plainly, before I tell you the story: the most dangerous Unseelie do not look like monsters. They look like gifts.</p>
+            <h4>I. Apples Are Not Neutral</h4>
+            <p>Mortals treat apples as wholesome symbols—lunch pails and pie windows and schoolhouse gratitude. Faerie does not.</p>
+            <p>In Faerie, the apple is a threshold fruit. It is round as a world. It is sweet as desire. It is a promise that stains your hands. Apples appear in too many old stories for coincidence: islands of eternal youth, sleeping curses, love divinations, the fruit that is never just fruit.</p>
+            <p>The Seelie say apples are hospitality—harvest, hearth, the kindness of orchard rows. The Unseelie say apples are leverage—temptation, binding, the long game of seeds. Both are right. Which is why they fought over him.</p>
+            <p>Because Johnny Appleseed did not merely carry apples. He carried the idea of apples into places where the wild had never agreed to them. And an idea is how Faerie conquers without marching.</p>
+            <h4>II. The Hedge Opens onto the Ohio River</h4>
+            <p>The hedge let me out at the edge of a river that rolled like dark glass. A wide American river, broad-shouldered, indifferent—carrying logs, carrying silt, carrying the future with the patience of something that cannot be hurried. Fog sat on the water in strips. Somewhere beyond it, a wolf called once and then thought better of it.</p>
+            <p>I knew the era by the smell: woodsmoke, wet leather, and fresh-split timber. The frontier, where humans learned quickly that the land does not care whether you are brave.</p>
+            <p>And there—on a rise above the riverbank—was the first sign I was on the correct trail: a neat little nursery patch of saplings, planted in lines too orderly for the wilderness, guarded by thorns that were not native to that soil. A fence built of brambles, living and awake. Unseelie craftsmanship. Not violent. Just… proprietary.</p>
+            <p>As I studied the saplings, a voice came from behind me, mild as sermon water. "You're looking at them like you're deciding whether they'll hurt you."</p>
+            <p>I turned. A man stood there barefoot on frost-bitten ground as if the cold had forgotten him. He was lean, half-shadowed by the trees. A cooking pot sat on his head at a jaunty angle like a crown that had been pawned and repurchased. A sack was slung over his shoulder—bulging with something that clinked and whispered. Seeds.</p>
+            <p>His eyes were bright, but not in the innocent way people mean when they say bright. Bright like flint. Bright like a match before it remembers what it does.</p>
+            <p>"John Chapman," I said, because names matter and because he was old enough in story to have two: one for mortals, one for the hedge.</p>
+            <p>He smiled without showing teeth. "Most folks call me Johnny."</p>
+            <p>"That is a diminutive," I replied.</p>
+            <p>"That is a choice," he said, and it was the first time his politeness felt like a knife being turned sideways.</p>
+            <p>He held out an apple. It was small, rough-skinned, more scar than shine. "A traveler's welcome," he offered. "Eat."</p>
+            <p>Seelie hospitality has rules: bread, salt, clear guest-right. Unseelie hospitality has hooks: food offered too quickly, too casually, with no stated terms—because the terms come later, when your mouth has already said yes. I did not take it.</p>
+            <p>Johnny did not seem offended. He only watched me the way a farmer watches weather: with the calm certainty that it will happen regardless of preference.</p>
+            <h4>III. The Seelie Argument, and Why It Almost Works</h4>
+            <p>The Seelie delegation—three harvest-fae with wheat-gold hair and manners like warm kitchens—had made their case before I left the Court. They spoke of him like a saint. "He plants life." "He feeds the hungry." "He asks little for himself." "He is gentle." "He is generous." All true—at least on the surface. In Faerie, truth is often the first layer of a lie.</p>
+            <p>When I met Johnny, he spoke kindly to a passing settler. He offered saplings for almost nothing. He pointed out a safe ford across the river. He shooed a child away from a snake den with a voice like a lullaby. No threat. No glamour show. No theatrical menace.</p>
+            <p>And that is precisely why the Unseelie wanted him. Because the most effective predation is the kind that convinces the prey it is choosing.</p>
+            <h4>IV. Exhibit One: The Seed as Contract</h4>
+            <p>Johnny walked with me along the edge of his nursery. He did not step between rows; he stepped beside them, as if the saplings were a congregation and he was their preacher. He crouched, dug a thumb into the soil, and pulled up a seed from the dirt like a coin.</p>
+            <p>"Do you know what a seed is?" he asked.</p>
+            <p>"A future," I said.</p>
+            <p>He nodded approvingly. "A future you can put in somebody else's hands." Then he dropped it into the furrow again and patted the soil down, gentle as tucking in a child.</p>
+            <p>Here is the Unseelie mechanism hidden inside the pastoral image: a seed is small enough to be dismissed. Small enough to be accepted without thought. Small enough to be carried home. But once planted, it demands years of care. Water. Protection. Space. Patience.</p>
+            <p>And when it finally bears fruit, it has altered the land around it—shade, roots, insects, birds, beasts. A new little ecosystem, built around a human promise they didn't recognize as a promise. Johnny's gift is never just an apple tree. It is a commitment disguised as generosity.</p>
+            <p>That is Unseelie to the marrow. The Seelie bind you with visible rules and ceremonies. The Unseelie bind you with something you willingly nurture.</p>
+            <h4>V. Exhibit Two: Orchards as Invisible Borders</h4>
+            <p>We reached a clearing where someone had stacked logs for a cabin that did not yet exist. The place was marked by human ambition: a cleared patch, fresh stumps, the air raw with sawdust. In the corners—where property lines would someday be argued over—Johnny had planted saplings. Not in the center where they'd be admired. On the edges.</p>
+            <p>I looked at him. "You plant like you're drawing."</p>
+            <p>He shrugged. "Trees make good markers. People trust what grows."</p>
+            <p>Exactly. Humans arrive and say, <em>This is mine.</em> The wilderness replies, <em>Prove it.</em> Johnny provided proof in advance: living stakes, orchard-corners, future fences. He placed himself quietly at the hinge point where wilderness becomes settlement—not by conquest, but by cultivation.</p>
+            <p>And do you know what Faerie calls a border drawn without being noticed? A snare. Because once the border exists, conflict arrives to defend it. People fight over it. They bleed for it. They change themselves for it. A Seelie might bless a harvest already promised. An Unseelie plants the dispute that will ripen later.</p>
+            <h4>VI. Exhibit Three: The Bitter Apple and the Sweet Lie</h4>
+            <p>Johnny finally ate one of his own apples in front of me, biting into it without flinching. It was not the kind of apple mortals imagine—crisp and honeyed. It was sharp, tannic, almost medicinal. I tasted the air and understood: many apples grown from seed are unpredictable—often bitter, fit more for pressing than for eating.</p>
+            <p>Johnny smiled at my recognition. "Most folks don't eat them," he said. "They drink them."</p>
+            <p>Ah. Drink is how humans trade pain for forgetting. Drink is how a hard year becomes survivable. Drink is how grief is set down for an hour. And in the old grammar of Faerie, fermented fruit is a cousin to enchantment: it loosens memory. It blurs judgment. It makes a person willing to stay where they are.</p>
+            <p>Johnny wasn't handing out sweetness. He was handing out a method. A way for settlers to dull the ache of displacement, loneliness, and loss—so they could keep pushing forward without breaking. It sounds merciful until you see what it enables: forests cut faster, treaties ignored more easily, the land made into product instead of presence.</p>
+            <p>The Unseelie don't always push you by force. Sometimes they steady you with a warm cup so you can walk deeper into a mistake.</p>
+            <h4>VII. Exhibit Four: He Takes Payment That Doesn't Look Like Payment</h4>
+            <p>We met a family that afternoon—tired faces, hungry children, a mother whose hands had forgotten softness. Johnny offered them saplings. The father asked what he wanted in return. Johnny shook his head. "Pay me when you can."</p>
+            <p>A Seelie would have named the price openly, because Seelie bargains favor clarity. Johnny did not. When the father insisted—pride and suspicion braided together—Johnny paused, as if considering what would fit the man's soul. Then he said, lightly, "Tell me your names."</p>
+            <p>Just that. Names. The father gave his. The mother gave hers. The children did too, delighted to be included. Johnny repeated each one carefully, tasting the sound of it, as if learning a spice.</p>
+            <p>I felt the hairs on my arms lift. Names are not merely labels in the hedge-world. They are handles. Not always used cruelly—but always usable.</p>
+            <p>When they finished, Johnny smiled, wished them luck, and walked away. The family thought they'd received charity. But I saw the actual transaction: he had sold them a future obligation—care for the trees—and taken in exchange the one thing mortals give away too easily, because they do not know it has weight.</p>
+            <p>A Seelie might take your name in ceremony and bind themselves to you through guest-right. An Unseelie takes your name casually, like borrowing a tool, and never tells you what they might build with it.</p>
+            <h4>VIII. Exhibit Five: The Animals That Do Not Fear Him</h4>
+            <p>That night we camped near his nursery. Coyotes yipped in the distance. An owl watched us with judgmental patience. Johnny sat cross-legged by the fire, humming something that sounded like a hymn until you listened closely and realized it was older than the church that would later claim it.</p>
+            <p>A deer approached the fireline, close enough that I could see its breath. It did not bolt. Johnny looked up and nodded to it like an equal. Then, in the brush beyond the deer, I saw movement—low, heavy, purposeful. A bear. It did not charge. It did not retreat. It simply stood and watched him, the way a guard watches a gate.</p>
+            <p>Predators and prey holding calm in the same frame is not "nature being friendly." It is an agreement. Unseelie power is often recognized not by what it attacks, but by what refuses to attack it. Johnny Appleseed wore gentleness like a coat, but something underneath it held the forest in negotiation.</p>
+            <h4>IX. The Question I Asked That He Answered Too Honestly</h4>
+            <p>Near midnight, while the fire sank into coals, I finally asked what I had come to ask. "Who do you plant for?" I said. Not why. Not how. Who.</p>
+            <p>Johnny looked at me for a long moment. The coals reflected in his eyes like little red worlds. Then he said, softly, "For the ones who come after."</p>
+            <p>That is a beautiful answer. It is also an Unseelie answer. Because "the ones who come after" is vague enough to contain anything: kindness, conquest, refuge, ruin. It is the language of people who operate on timescales that make individual suffering feel like an accounting error.</p>
+            <p>Seelie kindness is immediate. It warms the present. Unseelie ambition is patient. It shapes the future. Johnny planted futures. And he did it across miles of wilderness like a quiet spell cast one seed at a time.</p>
+            <h4>X. The Verdict: Why Johnny Appleseed Is Unseelie</h4>
+            <p>At dawn I wrote my findings on vellum and held it over the river so the mist could witness it—because in this land, water remembers. Johnny watched me write without comment. He only smiled as if the outcome amused him.</p>
+            <p>Here is my verdict, and the reasons—plainly stated, even if wrapped in story. Johnny Appleseed is Unseelie because his gifts are commitments: a sapling is not charity; it is a decades-long obligation that binds land and people to a future they did not fully consent to. He plants borders before humans recognize borders, using orchards and nurseries to pre-shape settlement patterns, disputes, and claims—soft power that becomes hard consequence. He spreads a fruit that often becomes drink, and drink is enchantment's cousin; he offers comfort that enables endurance, and endurance enables expansion, and expansion feeds hunger. He takes payment in things mortals underestimate—names, stories, promises, small moral obligations. And the wild does not treat him as prey or intruder; the forest negotiates with him. That is not sainthood. That is jurisdiction.</p>
+            <p>He is not a cackling villain. He is something colder, and subtler: a man who smiles like a blessing while planting inevitability.</p>
+            <p>When I finished, I sealed the vellum with Thorn Court wax—black with a red sheen, like an apple held too long in winter. Johnny tilted his pot-hat crown in a mock bow. "So," he said, pleasantly, "what am I?"</p>
+            <p>"You're Unseelie," I replied.</p>
+            <p>He did not protest. He did not deny it. He only looked out over the river, where fog curled like breath, and said, as if sharing a private joke with the world: "Funny how folks think planting means you're harmless."</p>
+            <p>Then he reached into his sack, pulled out a handful of seeds, and scattered them into the grass as if tossing coins at a beggar. The seeds disappeared into the soil. Quiet. Invisible. Already working.</p>
+            <p>And I understood the final, simplest truth of him—the truth the Seelie always miss until it is too late: an Unseelie doesn't have to chase you. He only has to plant something you'll spend your life tending.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- THE YELLOW ROBE -->
+      <li class="chapter" id="yellow-robe" data-reveal>
+        <figure class="chapter__art">
+          <img src="assets/images/story-yellow-robe.jpg" alt="A crowned figure in a yellow robe with a face of writhing golden tentacles, against a sickly yellow sky" />
+        </figure>
+        <div class="chapter__head">
+          <div class="chapter__num">Cosmic horror · Flash fiction</div>
+          <h3 class="chapter__title">The Yellow Robe</h3>
+          <p class="chapter__synopsis">
+            A museum curator unwraps an impossibly vibrant robe from a sealed tomb
+            beneath Lake Hali — and is marked.
+          </p>
+          <button class="chapter__toggle" data-target="story-yellow" aria-expanded="false" aria-controls="story-yellow" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-yellow" hidden>
+          <div class="chapter__body-inner">
+            <p>The museum's new acquisition arrived wrapped in oilcloth that reeked of sulfur and sea brine. Dr. Helena Marsh peeled back the layers with trembling fingers, revealing the ancient silk robe within—impossibly vibrant yellow despite its claimed age of eight centuries.</p>
+            <p>"Found in a sealed tomb beneath Lake Hali," the note read. "Do not display during the autumn equinox."</p>
+            <p>Helena scoffed at the superstition, running her fingers along the intricate patterns embroidered in the fabric. They seemed to writhe under her touch, forming symbols that hurt to perceive directly. She blinked, and for a moment, the patterns appeared to spell out words in a language that predated human speech.</p>
+            <p>That night, she dreamed of a figure standing at the edge of reality, where yellow stars hung in a black void. It wore the robe, but where its head should be, tentacles of golden light writhed upward, dispersing into cosmic dust that reformed as screaming mouths before dissolving again.</p>
+            <p>"You have touched the vestment," it spoke without words, its voice a symphony of drowning civilizations. "You are marked."</p>
+            <p>Helena woke to find yellow dust on her pillow, sweet-smelling and wrong. Her reflection in the bathroom mirror flickered—for just a second, she saw tentacles sprouting from her own neck, reaching toward a sky that didn't exist.</p>
+            <p>The robe now hangs in the museum's restricted collection. Helena hasn't been seen in three weeks. Security footage from her last night shows her standing before the display case, swaying gently as if underwater, yellow mist rising from her skin.</p>
+            <p>The guards found only the robe the next morning, somehow draped perfectly on its mannequin. It had grown heavier.</p>
           </div>
         </div>
       </li>

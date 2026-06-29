@@ -31,16 +31,18 @@
       const target = document.getElementById(targetId);
       if (!target) return;
       const expanded = btn.getAttribute("aria-expanded") === "true";
+      // Labels default to the novel's "chapter" wording but can be overridden
+      // per-toggle (e.g. the short-stories page) via data-label-* attributes.
+      const expandLabel = btn.getAttribute("data-label-expand") || "Read the full chapter";
+      const collapseLabel = btn.getAttribute("data-label-collapse") || "Collapse chapter";
       if (expanded) {
         target.hidden = true;
         btn.setAttribute("aria-expanded", "false");
-        btn.querySelector(".chapter__toggle-label").textContent =
-          "Read the full chapter";
+        btn.querySelector(".chapter__toggle-label").textContent = expandLabel;
       } else {
         target.hidden = false;
         btn.setAttribute("aria-expanded", "true");
-        btn.querySelector(".chapter__toggle-label").textContent =
-          "Collapse chapter";
+        btn.querySelector(".chapter__toggle-label").textContent = collapseLabel;
       }
     });
   });

@@ -86,4 +86,4 @@ I sat on the end of the bed in the wool coat in the lamplight, and I did not fee
 
 The lamp was on. The room was warm. The thing I had learned sat in the room with me and did not go anywhere.
 
-I took off the coat. I turned off the lamp. I lay down in the dark, which was the dark, and after a while I slept.
+I took off the coat. I turned off the lamp. I lay down in the dark, which was the dark, and the body, having learned nothing, slept.

@@ -47,6 +47,39 @@
     });
   });
 
+  /* ---- Bilingual story language switch -------------------------------- */
+  // A story body can hold parallel .story-lang[data-lang="en"|"ru"] blocks.
+  // The toggle swaps which is shown and re-labels itself in the other tongue.
+  const LANG_LABELS = {
+    vasilisa: {
+      ru: { title: "Тихое пламя Василисы", sub: "Читать по-русски", aria: "Читать «Тихое пламя Василисы» по-русски" },
+      en: { title: "The Quiet Flame of Vasilisa", sub: "Read in English", aria: "Read “The Quiet Flame of Vasilisa” in English" }
+    }
+  };
+  document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const inner = btn.closest(".chapter__body-inner");
+      if (!inner) return;
+      const en = inner.querySelector('.story-lang[data-lang="en"]');
+      const ru = inner.querySelector('.story-lang[data-lang="ru"]');
+      if (!en || !ru) return;
+      const showRu = btn.getAttribute("aria-pressed") !== "true";
+      en.hidden = showRu;
+      ru.hidden = !showRu;
+      btn.setAttribute("aria-pressed", showRu ? "true" : "false");
+      // When Russian is showing, the button offers a way back to English.
+      const labels = LANG_LABELS[btn.getAttribute("data-lang-toggle")];
+      const face = labels ? (showRu ? labels.en : labels.ru) : null;
+      if (face) {
+        const title = btn.querySelector(".lang-toggle__title");
+        const sub = btn.querySelector(".lang-toggle__sub");
+        if (title) title.textContent = face.title;
+        if (sub) sub.textContent = face.sub;
+        btn.setAttribute("aria-label", face.aria);
+      }
+    });
+  });
+
   /* ---- Smooth-scroll offset for sticky nav (fallback only) ------------ */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {

@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Short Stories — The Lit Room · James Cupps</title>
-<meta name="description" content="Short fiction and fairy tales by James Cupps — dark-fantasy guardian tales, an ethereal night-bloom fairy story, three Faerie-court verdicts, a science-fiction series opener, and a turn through cosmic horror." />
+<meta name="description" content="Short fiction and fairy tales by James Cupps — a Slavic border-village folktale, dark-fantasy guardian tales, an ethereal night-bloom fairy story, three Faerie-court verdicts, a science-fiction series opener, and a turn through cosmic horror." />
 <meta name="theme-color" content="#1a1d22" />
 
 <!-- Fonts: Boska (display, literary) + Source Serif 4 (body) + Satoshi (UI micro) -->
@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/comments.css" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
 <style>
@@ -33,6 +34,72 @@
   }
   /* Stories with an illustration that fails to load shouldn't leave an empty column. */
   .chapter__art img { background: var(--paper-3); }
+
+  /* Bilingual story: a lamp-lit switch that carries the story's "quiet flame" motif. */
+  .lang-switch {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 var(--s-6);
+  }
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding: var(--s-3) var(--s-5) var(--s-3) var(--s-4);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background:
+      radial-gradient(130% 150% at 16% 50%, var(--amber-glow), transparent 62%),
+      var(--paper-2);
+    color: var(--ink);
+    transition: border-color var(--dur) var(--ease),
+                background var(--dur) var(--ease),
+                transform var(--dur-fast) var(--ease),
+                box-shadow var(--dur) var(--ease);
+  }
+  .lang-toggle:hover,
+  .lang-toggle:focus-visible {
+    border-color: var(--amber);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px -18px var(--amber);
+    outline: none;
+  }
+  .lang-toggle__flame {
+    display: inline-flex;
+    color: var(--amber);
+    filter: drop-shadow(0 0 5px var(--amber-glow));
+    transform-origin: 50% 90%;
+    animation: lamp-flicker 3.4s var(--ease) infinite;
+  }
+  .lang-toggle__flame svg { width: 15px; height: 21px; display: block; }
+  .lang-toggle__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-align: left;
+    line-height: 1.1;
+  }
+  .lang-toggle__title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.06rem;
+    letter-spacing: 0.01em;
+  }
+  .lang-toggle__sub {
+    font-family: var(--ui);
+    font-size: var(--text-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-fade);
+  }
+  @keyframes lamp-flicker {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    46% { opacity: 0.86; transform: scale(0.97, 1.03); }
+    72% { opacity: 0.95; transform: scale(1.02, 0.99); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lang-toggle__flame { animation: none; }
+  }
 </style>
 
 <!-- Vercel Analytics (Web Analytics + Speed Insights) -->
@@ -66,12 +133,99 @@
     <div class="eyebrow">Short fiction</div>
     <h2 class="section__title">Short stories &amp; fairy tales.</h2>
     <p class="section__lede">
-      Shorter pieces — guardian tales, a night-bloom fairy story, three
-      Faerie-court verdicts, a science-fiction opener, and a turn through
-      cosmic horror. Click a title to read it.
+      Shorter pieces — a Slavic border-village folktale, guardian tales, a
+      night-bloom fairy story, three Faerie-court verdicts, a science-fiction
+      opener, and a turn through cosmic horror. Click a title to read it.
     </p>
 
     <ol class="chapters">
+
+      <!-- THE QUIET FLAME OF VASILISA -->
+      <li class="chapter" id="vasilisa" data-reveal>
+        <figure class="chapter__art">
+          <img src="assets/images/story-vasilisa.jpg" alt="By firelight in a wooden izba, a mother in an embroidered headscarf places a small carved doll into her daughter's hands; above them an icon of the Mother of God glows beside a lit lampada, carving tools and wood shavings lie on the table, and birches and the steppe show through the window at dusk." />
+        </figure>
+        <div class="chapter__head">
+          <div class="chapter__num">Fairy tale · Slavic folklore · July 2026</div>
+          <h3 class="chapter__title">The Quiet Flame of Vasilisa</h3>
+          <p class="chapter__synopsis">
+            How the border girl became Nika. On the edge of forest and steppe,
+            a woodworker's daughter learns mending from her father, the old
+            songs and prayers from her mother, and is given a doll that
+            listens — the quiet beginning of one who will one day be called by
+            another name.
+          </p>
+          <button class="chapter__toggle" data-target="story-vasilisa" aria-expanded="false" aria-controls="story-vasilisa" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-vasilisa" hidden>
+          <div class="chapter__body-inner">
+            <div class="lang-switch">
+              <button class="lang-toggle" type="button" data-lang-toggle="vasilisa" aria-pressed="false" aria-label="Читать «Тихое пламя Василисы» по-русски">
+                <span class="lang-toggle__flame" aria-hidden="true">
+                  <svg viewBox="0 0 16 22" xmlns="http://www.w3.org/2000/svg"><path d="M8 1s-5 4.6-5 10.2A5 5 0 0 0 13 11c0-2-1-3.6-1.8-4.7-.5 1.5-1.5 2.2-2.2 2.2.6-2.5-1-6.7-1-7.5Z" fill="currentColor"/></svg>
+                </span>
+                <span class="lang-toggle__text">
+                  <span class="lang-toggle__title">Тихое пламя Василисы</span>
+                  <span class="lang-toggle__sub">Читать по-русски</span>
+                </span>
+              </button>
+            </div>
+            <div class="story-lang" data-lang="en">
+            <h4>1. The Doll That Listened</h4>
+            <p>In a certain village that stood where the deep forest met the open steppe, there lived a family in a small izba of dark timber. Birch trees leaned close to the walls, and in summer the wind carried the smell of grass from the wide land and the cooler breath of the woods. In the beautiful corner of the house, above a clean shelf, hung an icon of the Mother of God with a thin lampada that the mother lit each evening. The Domovoi of that house was content in those days, for the hearth was kept clean, the threshold was crossed with care, and the people inside still knew how to live with open hands.</p>
+            <p>The father of the house was a man who worked with wood and iron. His hands were broad and sure. In the evenings, when the work was done, he would take down the old balalaika or simply clap his hands, and the mother would rise from the bench. Together they sang the old songs — not the grand ones of the bogatyrs, but the quiet ones that belong to the stove and the threshold. They danced in the small space between the table and the fire, laughing when they bumped the benches, their shadows moving large and lively on the walls. Sometimes the mother would pause, cross herself lightly before the icon, and then return to the dance as if the joy and the prayer were one breath. The little girl who watched them from her place by the stove felt the house itself grow warmer then.</p>
+            <p>That girl's name was Vasilisa.</p>
+            <p>She had a brother, a year or two older. He was often away with his own friends or helping the mother with other tasks around the house and yard. But when Vasilisa was still small enough that her head reached only to her father's belt, the father began to take <em>her</em> with him. He did not leave her behind when a hinge needed mending or a fence post had split or the shaft of a cart had cracked. Those hours of work became their own. He set her on a low stool or let her stand close while he worked, and he spoke to her as he worked.</p>
+            <p>"See how the grain runs," he would say, turning a piece of wood in the light. "You do not fight it. You ask it what it wants to become, and then you help it."</p>
+            <p>Or: "A nail driven true holds longer than ten driven in anger."</p>
+            <p>He let her hold the tools when they were not too heavy. He showed her how to feel with her fingers for the place where a joint had loosened, how to listen to the sound a thing makes when it is almost whole again. She learned the smell of fresh shavings and the particular satisfaction that comes when something broken stands upright once more. These lessons settled into her hands the way the songs settled into her memory. They were hours that belonged to the two of them.</p>
+            <p>There was also a girl of the village, nearly her own age, with a quick laugh and eyes that saw clearly. They walked the same paths between the houses and the edge of the forest. When one had too many chores, the other would appear without being asked and take half the load. They shared the first ripe berries and the first thin ice on the puddles. The friend once said, while they sat on the warm steps of the stove, "You look at things the way the icon looks — quiet, but nothing is hidden from you." Vasilisa only smiled and passed her another berry. She did not know what to do with such words, so she let them rest outside herself.</p>
+            <p>In the evenings, when the father had gone to speak with the neighbours or to check the animals, the mother would sit with Vasilisa on the wide bench by the stove. She taught her the old songs in a lower voice, the ones that speak of the river that remembers every crossing, of the birch that keeps secrets in its white skin, of the fire that must be fed with care. She also taught her how to stand before the beautiful corner, how to light the thin wick of the lampada, and how to speak a few simple words to the Mother of God — not long prayers, only the quiet ones that a child can carry.</p>
+            <p>"The land speaks," the mother said, "but it does not raise its voice. You must grow quiet enough to hear it. The same is true of people, and of the Domovoi, and of your own heart when it is tired. And when the quiet is too heavy, you may stand before the icon and give the heaviness there. It will be held."</p>
+            <p>One evening in late autumn, when the first thin ice had formed on the water bucket and the wind had begun to worry the thatch, the mother called Vasilisa to her. She took from the chest a small wooden doll, worn smooth by other hands long before. Its face was simple, the eyes only dark marks, yet when Vasilisa held it the wood felt strangely warm, as if it had been kept near a living body.</p>
+            <p>"This was given to me by my own mother," the woman said, "and to her by hers. It does not speak with a loud tongue. It listens. When you are alone and the road is long, feed it a crumb of bread and a drop of clean water, and tell it what troubles you. It will keep your words, and in time it will help you know what must be done. Keep it close. Do not show it to those who would laugh or those who would take it for a toy."</p>
+            <p>She closed Vasilisa's fingers around the doll. For a moment the girl's hands and the mother's hands and the smooth wood were all one warmth. The lampada in the beautiful corner flickered as if in answer.</p>
+            <p>"Remember the songs," the mother said. "Remember the prayers. And remember how to listen."</p>
+            <p>Vasilisa kept the doll under her pillow, near the wall that faced the icon. At night, when the house was quiet, she would feel its small weight and know she was not entirely alone with her thoughts. Sometimes she would whisper to it the same simple words her mother had taught her before the icons.</p>
+            <p>The years lengthened. The father still sang sometimes, and still took Vasilisa with him when there was mending to do, but the journeys he made away from the village grew longer. There were seasons when he returned with less laughter in his voice, and seasons when the songs by the stove became fewer. The Domovoi of the house grew a little thinner, though it still accepted the small offerings left for it. Vasilisa noticed these things the way she had been taught to notice — quietly, without making a noise about them. She went on learning the work of hands and the work of listening. She fed the doll its crumb when her heart felt heavy, and the wood remained warm against her palm. When a neighbour's child fell ill or an old woman needed water carried, she went without being asked. Her friend of the heart walked with her on many of those errands.</p>
+            <p>Once the mother looked at her for a long time in the firelight and said softly, "There is a steady light in you, my girl. Do you feel it?" Vasilisa only shook her head a little and turned back to the mending in her lap. She did not know how to hold such words, so she let them rest outside herself, as she had done before.</p>
+            <p>So the girl of the border village grew, carrying in her hands the lessons of mending, in her memory the old songs and the simple prayers, and under her pillow the doll that listened. The forest stood dark behind the house and the steppe stretched wide before it, and the road that would one day call her had not yet shown its full length. But the quiet flame had already been lit, and it would not go out easily.</p>
+            <p>And that is the beginning of the story of Vasilisa, who would one day be called by another name.</p>
+            </div>
+
+            <div class="story-lang" data-lang="ru" lang="ru" hidden>
+            <h4>1. Кукла, которая слушала</h4>
+            <p>В некотором селе, что стояло там, где тёмный лес сходился с открытой степью, жила семья в небольшой избе из тёмного дерева. Берёзы наклонялись к стенам, а летом ветер приносил запах травы с широкой земли и более прохладное дыхание леса. В красном углу избы, на чистой полке, висела икона Божией Матери, и каждый вечер мать зажигала перед ней тонкую лампаду. Домовой в том доме был доволен в те годы: порог содержали в чистоте, очаг не оставляли без присмотра, а люди внутри ещё умели жить с открытыми руками.</p>
+            <p>Отец в том доме был мастером по дереву и железу. Руки у него были широкие и верные. По вечерам, когда работа заканчивалась, он брал старую балалайку или просто хлопал в ладоши, и мать поднималась со скамьи. Вместе они пели старые песни — не те громкие, что о богатырях, а тихие, домашние, что принадлежат печи и порогу. Они плясали в небольшом пространстве между столом и огнём, смеялись, когда задевали скамьи, и тени их двигались по стенам большими и живыми. Иногда мать ненадолго останавливалась, крестилась перед иконой и снова возвращалась в пляску, будто радость и молитва были одним дыханием. Маленькая девочка, что смотрела на них со своего места у печи, чувствовала, как сам дом становится в эти минуты теплее.</p>
+            <p>Звали девочку Василиса.</p>
+            <p>Был у неё брат, годом или двумя старше. Он часто уходил к своим друзьям или помогал матери по хозяйству. А вот Василису отец стал брать с собой, когда она была ещё совсем маленькой — ростом едва до его пояса. Он не оставлял её дома, когда нужно было починить петлю, подправить расколотый столб или скрепить треснувший оглобель. Эти часы работы стали их общими. Он сажал её на низкий табурет или позволял стоять рядом, и говорил, пока работал.</p>
+            <p>— Смотри, как идёт волокно, — говорил он, поворачивая кусок дерева к свету. — С ним не борются. Его спрашивают, чем оно хочет стать, и потом помогают.</p>
+            <p>Или:</p>
+            <p>— Гвоздь, вбитый правильно, держит дольше, чем десять, вбитых со злостью.</p>
+            <p>Он давал ей в руки инструменты, когда они были не слишком тяжёлыми. Показывал, как пальцами нащупать место, где разболтался сустав, как слушать звук, который издаёт вещь, когда она почти снова цела. Она запомнила запах свежих стружек и ту особенную радость, когда сломанное снова встаёт прямо. Эти уроки легли ей в руки так же прочно, как песни легли в память. Это были часы, принадлежавшие только им двоим.</p>
+            <p>Была ещё девочка из того же села, почти её ровесница, с быстрым смехом и ясными глазами. Они ходили одними и теми же тропинками между домами и опушкой леса. Когда у одной становилось слишком много дел, другая появлялась без просьбы и брала половину. Они делили первые спелые ягоды и первый тонкий лёд на лужах. Однажды подруга сказала, сидя с ней на тёплых ступенях у печи:</p>
+            <p>— Ты смотришь на вещи так, как смотрит икона — тихо, но от тебя ничего не скрыто.</p>
+            <p>Василиса только улыбнулась и протянула ей ещё одну ягоду. Она не знала, что делать с такими словами, и потому оставила их снаружи себя.</p>
+            <p>По вечерам, когда отец уходил поговорить с соседями или проверить скотину, мать садилась с Василисой на широкую скамью у печи. Она учила её старым песням тихим голосом — тем, что рассказывают о реке, которая помнит каждый переход, о берёзе, хранящей тайны в белой коре, об огне, который нужно кормить бережно. А ещё она учила, как стоять перед красным углом, как зажигать тонкий фитиль лампады и как произносить несколько простых слов к Божией Матери — не длинные молитвы, а только те короткие, что может унести с собой ребёнок.</p>
+            <p>— Земля говорит, — говорила мать, — но не повышает голоса. Нужно самому стать тихим, чтобы услышать. Так же и с людьми, и с домовым, и с собственным сердцем, когда оно устало. А когда тишина становится слишком тяжёлой, можно встать перед иконой и отдать эту тяжесть туда. Её примут.</p>
+            <p>Однажды поздней осенью, когда на ведре с водой уже появился первый тонкий лёд, а ветер начал беспокоить солому на крыше, мать позвала Василису к себе. Она достала из сундука маленькую деревянную куклу, стёртую до гладкости чужими руками давным-давно. Лицо у куклы было простым, глаза — только тёмными точками, но когда Василиса взяла её, дерево показалось странно тёплым, будто его долго держали рядом с живым телом.</p>
+            <p>— Эту куклу мне дала моя мать, — сказала женщина, — а ей — её мать. Она не говорит громким языком. Она слушает. Когда ты будешь одна и дорога окажется долгой, накорми её крошкой хлеба и каплей чистой воды и расскажи, что тебя тревожит. Она сохранит твои слова и со временем поможет понять, что нужно делать. Держи её близко. Не показывай тем, кто станет смеяться, и тем, кто примет её за простую игрушку.</p>
+            <p>Она сомкнула пальцы Василисы вокруг куклы. На мгновение руки девочки, руки матери и гладкое дерево стали одной теплотой. Лампада в красном углу тихо мигнула, будто в ответ.</p>
+            <p>— Помни песни, — сказала мать. — Помни молитвы. И помни, как слушать.</p>
+            <p>Василиса клала куклу под подушку, ближе к стене, что смотрела на икону. Ночью, когда в доме становилось тихо, она чувствовала её небольшой вес и знала, что не совсем одна со своими мыслями. Иногда она шептала кукле те же простые слова, которым мать учила её перед иконами.</p>
+            <p>Годы шли. Отец всё ещё иногда пел и всё ещё брал Василису с собой, когда нужно было что-то чинить, но поездки его из села становились всё длиннее. Бывали времена, когда он возвращался с меньшим смехом в голосе, и времена, когда песен у печи становилось меньше. Домовой в доме сделался немного тоньше, хотя по-прежнему принимал маленькие приношения. Василиса замечала это так, как её учили замечать, — тихо, не поднимая шума. Она продолжала учиться работе рук и работе слушания. Когда сердце становилось тяжёлым, она кормила куклу крошкой, и дерево оставалось тёплым у её ладони. Если у соседского ребёнка случалась болезнь или старушке нужно было принести воды, она шла, не дожидаясь просьбы. Подруга сердца часто ходила с ней в этих делах.</p>
+            <p>Однажды мать долго смотрела на неё в свете огня и тихо сказала:</p>
+            <p>— В тебе есть ровный свет, дочка. Ты его чувствуешь?</p>
+            <p>Василиса лишь чуть покачала головой и снова склонилась над починкой у себя на коленях. Она не знала, как принять такие слова, и потому снова оставила их снаружи себя, как делала прежде.</p>
+            <p>Так росла девочка из пограничного села, неся в руках уроки починки, в памяти — старые песни и простые молитвы, а под подушкой — куклу, которая слушала. Лес стоял тёмным за домом, степь расстилалась широко перед ним, и дорога, которая однажды позовёт её, ещё не показала всей своей длины. Но тихий огонь уже был зажжён, и погаснуть ему будет нелегко.</p>
+            <p>И это — начало истории Василисы, которую однажды назовут другим именем.</p>
+            </div>
+          </div>
+        </div>
+      </li>
 
       <!-- THE GLOOMSTALKER -->
       <li class="chapter chapter--no-art" id="gloomstalker" data-reveal>
@@ -571,7 +725,10 @@
 
 </main>
 
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=3"></script>
 <script src="assets/refresh.js"></script>
+<!-- Comments: client-only Supabase. Invisible until assets/comments-config.js is filled in. -->
+<script src="assets/comments-config.js"></script>
+<script type="module" src="assets/comments.js"></script>
 </body>
 </html>

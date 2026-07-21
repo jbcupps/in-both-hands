@@ -14,7 +14,8 @@ window.IBH_COMMENTS = {
   SUPABASE_URL: "",            // e.g. https://xxxxxxxx.supabase.co
   SUPABASE_ANON_KEY: "",       // the long key labelled "anon" / "public"
   ADMIN_EMAIL: "jbcupps@gmail.com",
-  // Only list providers you have actually enabled in Supabase → Authentication → Providers.
-  // "azure" is Microsoft.
-  PROVIDERS: ["google", "apple", "facebook", "azure"]
+  // OAuth providers shown as buttons. Email magic-link is always offered separately
+  // and is not listed here. Only list providers actually enabled in
+  // Supabase → Authentication → Providers. ("azure" would be Microsoft.)
+  PROVIDERS: ["google"]
 };

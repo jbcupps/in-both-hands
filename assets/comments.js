@@ -22,7 +22,7 @@ function init() {
 
   // --- Inject one comment section into each chapter body -------------------
   const sections = [];
-  document.querySelectorAll('.chapter[id^="chapter-"]').forEach((chapter) => {
+  document.querySelectorAll(".chapter[id]").forEach((chapter) => {
     const inner = chapter.querySelector(".chapter__body-inner");
     if (!inner) return;
     const section = document.createElement("section");
@@ -77,6 +77,12 @@ function init() {
       esc(PROVIDER_LABELS[p] || p) + "</button>").join("");
     return (
       '<p class="comments__prompt">Sign in to leave a note. Only your name and your note are public — nothing else is shared.</p>' +
+      '<form class="comments__magic">' +
+      '<input class="comments__email" type="email" required autocomplete="email" ' +
+      'placeholder="you@email.com" aria-label="Email address" />' +
+      '<button class="comments__magic-submit" type="submit">Email me a sign-in link</button>' +
+      "</form>" +
+      '<div class="comments__or"><span>or</span></div>' +
       '<div class="comments__providers">' + buttons + "</div>"
     );
   }
@@ -165,6 +171,29 @@ function init() {
   });
 
   document.addEventListener("submit", async (e) => {
+    const magic = e.target.closest(".comments__magic");
+    if (magic) {
+      e.preventDefault();
+      const input = magic.querySelector(".comments__email");
+      const email = input ? input.value.trim() : "";
+      if (!email) return;
+      const submit = magic.querySelector(".comments__magic-submit");
+      if (submit) submit.disabled = true;
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: { emailRedirectTo: window.location.href.split("#")[0] }
+      });
+      if (error) {
+        if (submit) submit.disabled = false;
+        alert("Couldn’t send the link: " + error.message);
+        return;
+      }
+      magic.outerHTML =
+        '<p class="comments__prompt">Check your email for a sign-in link. ' +
+        "You can close this tab — the link opens you back here, signed in.</p>";
+      return;
+    }
+
     const form = e.target.closest(".comments__form");
     if (!form) return;
     e.preventDefault();

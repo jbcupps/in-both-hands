@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Short Stories — The Lit Room · James Cupps</title>
-<meta name="description" content="Short fiction and fairy tales by James Cupps — a Slavic border-village folktale, dark-fantasy guardian tales, an ethereal night-bloom fairy story, three Faerie-court verdicts, a science-fiction series opener, and a turn through cosmic horror." />
+<meta name="description" content="Short fiction and fairy tales by James Cupps, grouped by theme — two tales in the life of Vasilisa, three Faerie-court verdicts, a trio of dark-fantasy threshold-guardian tales, a science-fiction series opener, and a turn through cosmic horror." />
 <meta name="theme-color" content="#1a1d22" />
 
 <!-- Fonts: Boska (display, literary) + Source Serif 4 (body) + Satoshi (UI micro) -->
@@ -34,6 +34,45 @@
   }
   /* Stories with an illustration that fails to load shouldn't leave an empty column. */
   .chapter__art img { background: var(--paper-3); }
+
+  /* Thematic group headers that gather the stories by shared character and theme. */
+  .chapters__group {
+    margin-top: var(--s-8);
+    padding-top: var(--s-7);
+    border-top: 2px solid var(--rule);
+  }
+  .chapters__group:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .chapters__group-eyebrow {
+    font-family: var(--ui);
+    font-size: var(--text-xs);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 500;
+    margin-bottom: var(--s-3);
+  }
+  .chapters__group-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 var(--s-3);
+    letter-spacing: -0.01em;
+  }
+  .chapters__group-note {
+    font-family: var(--body);
+    font-size: var(--text-base);
+    color: var(--ink-mute);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 42rem;
+    font-style: italic;
+  }
 
   /* Bilingual story: a lamp-lit switch that carries the story's "quiet flame" motif. */
   .lang-switch {
@@ -133,12 +172,20 @@
     <div class="eyebrow">Short fiction</div>
     <h2 class="section__title">Short stories &amp; fairy tales.</h2>
     <p class="section__lede">
-      Shorter pieces — a Slavic border-village folktale, guardian tales, a
-      night-bloom fairy story, three Faerie-court verdicts, a science-fiction
-      opener, and a turn through cosmic horror. Click a title to read it.
+      Shorter pieces, gathered by their shared characters and themes — two
+      tales in the life of Vasilisa, three Faerie-court verdicts, a trio of
+      threshold-guardian tales, and a look past the folktale into science
+      fiction and cosmic horror. Click a title to read it.
     </p>
 
     <ol class="chapters">
+
+      <!-- GROUP: THE VASILISA TALES -->
+      <li class="chapters__group">
+        <div class="chapters__group-eyebrow">Slavic folklore</div>
+        <h3 class="chapters__group-title">The Vasilisa Tales</h3>
+        <p class="chapters__group-note">The life of a border-village woodworker’s daughter, told in sequence — the quiet flame first lit, then carried out among her neighbours.</p>
+      </li>
 
       <!-- THE QUIET FLAME OF VASILISA -->
       <li class="chapter" id="vasilisa" data-reveal>
@@ -227,115 +274,91 @@
         </div>
       </li>
 
-      <!-- THE GLOOMSTALKER -->
-      <li class="chapter chapter--no-art" id="gloomstalker" data-reveal>
+      <!-- THE SEEKER OF TRUE SHADOWS -->
+      <li class="chapter" id="seeker" data-reveal>
+        <figure class="chapter__art">
+          <img src="assets/images/story-vasilisa-2.jpg" alt="By candlelight in a wooden izba, Vasilisa sits mending cloth with a small carved doll tucked into her apron; behind her a suitor in a dark coat speaks at a table where village women watch, an icon corner with a lit lampada glows above, the stove burns to the right, and winter dusk shows through the frosted window." />
+        </figure>
         <div class="chapter__head">
-          <div class="chapter__num">Dark fantasy · December 2023</div>
-          <h3 class="chapter__title">The Gloomstalker</h3>
+          <div class="chapter__num">Fairy tale · Slavic folklore · Tale the Second · July 2026</div>
+          <h3 class="chapter__title">The Seeker of True Shadows</h3>
           <p class="chapter__synopsis">
-            A guardian of the threshold between worlds answers a summons to
-            mend a tear in the fabric of reality.
+            A polished suitor comes courting to the border village, and the
+            woodworker’s daughter — who has begun to read the hidden hearts of
+            men — asks one quiet question that lets the whole room see the cold
+            calculation beneath his fine coat.
           </p>
-          <button class="chapter__toggle" data-target="story-gloomstalker" aria-expanded="false" aria-controls="story-gloomstalker" data-label-expand="Read the story" data-label-collapse="Collapse story">
+          <button class="chapter__toggle" data-target="story-seeker" aria-expanded="false" aria-controls="story-seeker" data-label-expand="Read the story" data-label-collapse="Collapse story">
             <span class="chapter__toggle-label">Read the story</span>
             <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
           </button>
         </div>
-        <div class="chapter__body" id="story-gloomstalker" hidden>
+        <div class="chapter__body" id="story-seeker" hidden>
           <div class="chapter__body-inner">
-            <p>Under the crescent's glow, where stars dust the heavens and the forest breathes a misty sigh, a creature of fable finds its stride. The Gloomstalker, a legend whispered by the ancients, now manifests upon the path less trodden. Its eyes, ember-like, hold the secrets of a thousand years, piercing through the veil of darkness that hugs the earth. This night, the Gloomstalker is not just a myth told to frighten the young ones; it seeks the Silent Whisperer, an entity said to weave the fabric of reality through murmurs and soft cadences.</p>
-            <p>The forest around the Gloomstalker transforms with each of its thunderous steps, bending to a will that is as old as the tales themselves. The trees, ancient sentinels of the wood, lean away in a silent effort to respect the passage of such an enigmatic being. The ground underfoot, littered with the last autumn leaves and fallen branches, crunches softly, marking the passage of the Gloomstalker. This creature, with its shaggy mane and haunting presence, is not merely a beast, but a guardian of the threshold between worlds, a keeper of the balance that must be maintained.</p>
-            <p>The Silent Whisperer, a creature of light and shadow, has called upon the Gloomstalker this eve, a summoning that cannot be ignored. For within the forest, a disturbance has arisen; a tear in the fabric of reality, silent yet calamitous, threatens to unravel the threads that bind existence. It is this peril that the Gloomstalker seeks to confront, guided by an unspoken bond to the Whisperer, its eyes reflecting a determination that is as unwavering as the eternal stars above.</p>
-            <p>As the Gloomstalker moves through the forest, each being within its domain pauses, a silent acknowledgement of the unfolding story, a tale not yet fully told but felt by all. The Gloomstalker's journey is not one of predation, but of purpose, driven by the necessity to confront what lies beyond the tear, to protect the world that lies unknowingly in the balance.</p>
-            <p>Tonight, the forest holds its breath, the stars watch on, and the Gloomstalker, a creature of myth and might, ventures forth to mend the rending seams of reality, its story woven in the silence of the night.</p>
+            <div class="lang-switch">
+              <button class="lang-toggle" type="button" data-lang-toggle="seeker" aria-pressed="false" aria-label="Читать «Искательница истинных теней» по-русски">
+                <span class="lang-toggle__flame" aria-hidden="true">
+                  <svg viewBox="0 0 16 22" xmlns="http://www.w3.org/2000/svg"><path d="M8 1s-5 4.6-5 10.2A5 5 0 0 0 13 11c0-2-1-3.6-1.8-4.7-.5 1.5-1.5 2.2-2.2 2.2.6-2.5-1-6.7-1-7.5Z" fill="currentColor"/></svg>
+                </span>
+                <span class="lang-toggle__text">
+                  <span class="lang-toggle__title">Искательница истинных теней</span>
+                  <span class="lang-toggle__sub">Читать по-русски</span>
+                </span>
+              </button>
+            </div>
+            <div class="story-lang" data-lang="en">
+            <h4>2. The Seeker of True Shadows</h4>
+            <p>In the border village where the forest leaned close and the birch light fell thin across the thresholds, there lived a young woman named Vasilisa who had already begun the difficult craft of reading the hidden hearts of men. She did not name it a craft. She only noticed, the way a careful hand notices a weak seam before it tears, and she went on with the quiet work that had always been hers &mdash; carrying water, mending what was torn, bringing bread to the elderly, listening longer than she spoke.</p>
+            <p>The little wooden doll her mother had left her rested in the pocket of her apron. Each morning she fed it a crumb of bread and a drop of clean water, as she had been taught, and sometimes, when a truth settled clear in her chest, the doll grew warm against her side like a living coal. When a falsehood brushed near, it cooled. She treated both the same way she treated the weather or the grain of wood: useful to know, nothing to announce.</p>
+            <p>It was in the late days of autumn, when the stove smoke hung low along the ground and the first thin frost silvered the woodpile, that a young man came from the larger settlement beyond the ridge. His name was Aleksei, son of a household that kept more cattle and finer cloth than most in the border places. He arrived with a matchmaker's quiet word and with speech polished as river stones. He had come, he said, seeking a wife of modest virtue and steady hands, one who would keep a clean house and raise children in the fear of God. He spoke of a stove that would never go out, of regard that would last a lifetime, of security offered freely. His smile was open; the cross at his throat caught the light when he moved.</p>
+            <p>The gathering took place in the izba of old Marfa, whose granddaughter Katya was of an age for such talk and whose nature was quieter than most, given to looking down at her hands. Vasilisa had come early with a basket of fresh bread and a small jar of salve for Marfa's joints. She stayed to help sort the winter stores &mdash; the dried mushrooms, the last of the apples, the carefully wrapped seeds. In the krasny ugol the lampada burned steady and small beneath the icons. The air smelled of beeswax, bread, and the sharp promise of frost.</p>
+            <p>Anya was there for a little while, drawn by the novelty of a visitor from the larger place. She listened to Aleksei's words with bright eyes and whispered to Katya that such a man did not come often to their quiet edge of the world. Then she left on her own errands, carrying her brightness with her.</p>
+            <p>Aleksei spoke on. He praised the simplicity of the border village. He spoke of how a capable wife would raise his standing among his own people. He offered, with every appearance of generosity, to ease the small debts Marfa's household still carried from the hard summer.</p>
+            <p>Vasilisa worked among the stores and listened with the same attention she gave to the weight of a log or the direction of wind. She saw how his gaze rested on Katya's lowered head the way a man rests his eyes on a useful tool. She heard the careful pause between his praise of the girl and his praise of the work those hands would do. She felt the true shape settle into focus: not open cruelty, not loud greed, but a cold calculation that wore courtesy the way a man wears a fine coat against the weather. The doll against her side grew cool.</p>
+            <p>She had felt such coolings before, small and ordinary, the way one notices a change in the wind. This one was only clearer. She did not speak against him. When the matchmaker asked whether any in the room had a thought to offer, Vasilisa said quietly, as one might speak of the coming frost, “And when the stove burns low in the deepest night, whose hands will he trust to bank it? And will those hands be free to choose the wood?”</p>
+            <p>The question was ordinary. It could have been answered with more polished words. Yet something in the way she asked it &mdash; or in the steady look of her eyes that had already seen past the coat &mdash; made Aleksei pause. The air in the room seemed to clarify, as if a window had been opened onto cleaner light. The cross at his throat no longer caught the same brightness; his shoulders settled a fraction lower, as though the polished coat had grown heavier. Katya raised her head a little. Old Marfa's hands stilled among the seeds.</p>
+            <p>Aleksei recovered with a smile and spoke of trust and shared labor, yet the easy power of his earlier words had thinned and did not return. Later, when the talk turned, Vasilisa found a moment beside Katya near the stove. She pressed a small piece of the bread into the girl's hands and met her eyes for a steady moment. “You already know how to listen,” she said quietly. Then she returned to the mushrooms, as if nothing of weight had passed between them.</p>
+            <p>In the same hour she noticed that Marfa's jar of salve was nearly empty and that the old woman's shoulders had begun to tighten with the damp. Without remark she refilled the jar from the store she had brought and set it where Marfa would find it once the guests had gone. Continuous work, quiet as breath.</p>
+            <p>When the gathering ended and Aleksei took his leave with the matchmaker, the path he had proposed no longer lay so smooth. In the days that followed, Katya's family spoke among themselves with new care. The young man's offer was neither accepted nor sharply refused; it simply lost its hurry and its shine. Some said the girl had found a quieter strength. Others said only that the air had felt clearer while Vasilisa was in the room, and that things had a way of showing their true shape near her.</p>
+            <p>An elder woman, watching Vasilisa walk home along the frost-hardened path with her empty basket, murmured to her companion, “There is a steady light in that one. She looks at things the way the icon looks &mdash; quiet, but nothing stays hidden from her.” The words were soft, almost idle. They did not reach Vasilisa, or if they did she treated them as she treated most praise &mdash; with a small inclination of the head and a return to the next task.</p>
+            <p>That evening the lampada in her own krasny ugol burned with its steady flame. Her father's place was empty; he had gone again on one of the longer journeys that had become more frequent of late. The house held the ordinary silence of a place well kept. Vasilisa fed the little doll its crumb of bread and its drop of clean water, then set it for a moment on the bench near the icons. It rested neither warm nor cool, only quiet. She crossed herself as she had been taught and took up the mending that waited by the stove.</p>
+            <p>She felt no pride in the afternoon's seeing, and no heavy burden. The craft of looking past the mask was simply another form of the same careful attention she gave to wood and weather and the needs of those around her. Sometimes the clarity brought a slight loneliness, the way a high clear sky can feel lonelier than clouds. She sat with that loneliness for a longer breath than usual, letting it settle, then returned to the work of her hands. The quiet flame of attention burned on without demand, and the village, without quite knowing why, had begun to turn toward it.</p>
+            <p>Outside, the frost finished its delicate work across every branch and windowsill. Inside, the seeker of true shadows went on with the ordinary evening, the doll once more in her pocket, the light of the lampada steady and small and enough.</p>
+            </div>
+
+            <div class="story-lang" data-lang="ru" lang="ru" hidden>
+            <h4>2. Искательница истинных теней</h4>
+            <p>В пограничной деревне, где лес тесно прижимался к краю и берёзовый свет падал тонкой полосой на пороги, жила девушка по имени Василиса, которая уже начала трудное ремесло — читать скрытые сердца людей. Она не называла это ремеслом. Она просто замечала, как умелая рука замечает слабый шов прежде, чем он порвётся, и продолжала свою тихую работу, какая всегда была ей свойственна: носила воду, чинила порванное, относила хлеб старикам, слушала дольше, чем говорила.</p>
+            <p>Маленькая деревянная кукла, оставленная ей матерью, лежала в кармане передника. Каждое утро она кормила её крошкой хлеба и каплей чистой воды, как была научена, и иногда, когда правда ясно ложилась ей на сердце, кукла теплела у бока, словно живой уголёк. Когда же рядом проходило что-то ложное, она холодела. Василиса относилась к тому и другому так же, как к погоде или к волокнам дерева: полезно знать, но не о чём объявлять.</p>
+            <p>Были поздние осенние дни, когда дым от печей стелился низко над землёй, а первый тонкий иней посеребрил поленницу, когда из большего поселения за хребтом пришёл молодой человек. Звали его Алексей, сын дома, в котором держали больше скота и лучшее сукно, чем у большинства в пограничных местах. Он явился с тихим словом свахи и с речью, отточенной, как речные камни. Пришёл, сказал он, искать жену скромной добродетели и твёрдых рук — такую, что будет держать чистый дом и растить детей в страхе Божьем. Говорил о печи, которая никогда не погаснет, о почтении, что продлится всю жизнь, о защите, предложенной свободно. Улыбка его была открытой; крест на шее ловил свет, когда он двигался.</p>
+            <p>Сходка собралась в избе старой Марфы, чья внучка Катя была как раз в том возрасте и нравом тише большинства — любила краснеть и опускать глаза на руки. Василиса пришла рано с корзиной свежего хлеба и маленькой банкой мази для суставов Марфы. Осталась помогать разбирать зимние запасы — сушёные грибы, последние яблоки, бережно завёрнутые семена. В красном углу лампада горела ровно и мелко под иконами. Воздух пах воском, хлебом и острым обещанием мороза.</p>
+            <p>Аня тоже побывала там ненадолго — её привлекла новизна гостя из большого места. Она слушала слова Алексея яркими глазами и шепнула Кате, что такой человек нечасто заходит на их тихий край света. Потом ушла по своим делам, унося с собой свою яркость.</p>
+            <p>Алексей продолжал говорить. Хвалил простоту пограничной деревни. Говорил, как способная жена поднимет его среди своих. С видом полной щедрости предлагал облегчить небольшие долги, что ещё лежали на хозяйстве Марфы после трудного лета.</p>
+            <p>Василиса работала среди запасов и слушала с тем же вниманием, какое отдавала тяжести полена или направлению ветра. Она видела, как взгляд его лежит на опущенной голове Кати так, как мужчина смотрит на удобный инструмент. Слышала осторожную паузу между похвалой девушке и похвалой труду, который будут делать эти руки. Чувствовала, как истинный облик проясняется: не открытая жестокость, не громкая жадность, а холодный расчёт, который носит учтивость так, как человек носит хорошее пальто от непогоды. Кукла у бока похолодела.</p>
+            <p>Она уже чувствовала такие похолодания раньше — маленькие, обыкновенные, как замечаешь перемену ветра. Это было лишь яснее. Она не стала говорить против него. Когда сваха спросила, нет ли у кого из присутствующих мысли, Василиса тихо сказала, словно говоря о грядущем инее:</p>
+            <p>— А когда печь в самую глубокую ночь начнёт гаснуть, чьим рукам он доверит поддержать огонь? И будут ли эти руки свободны выбирать дрова?</p>
+            <p>Вопрос был обыкновенный. На него можно было ответить ещё более гладкими словами. Но что-то в том, как она спросила — или в спокойном взгляде глаз, уже видевших за пальто, — заставило Алексея замолчать. Воздух в комнате словно прояснился, будто открыли окно на более чистый свет. Крест на его шее уже не ловил тот же блеск; плечи чуть опустились, будто хорошее пальто вдруг стало тяжелее. Катя чуть подняла голову. Руки старой Марфы замерли среди семян.</p>
+            <p>Алексей оправился с улыбкой и заговорил о доверии и общем труде, однако лёгкая сила прежних слов его поредела и больше не вернулась. Позже, когда разговор повернул, Василиса нашла мгновение рядом с Катей у печи. Она вложила в руки девушки кусочек хлеба и встретила её взгляд спокойно и ровно.</p>
+            <p>— Ты уже умеешь слушать, — тихо сказала она.</p>
+            <p>Потом вернулась к грибам, словно ничего важного между ними не прошло.</p>
+            <p>В тот же час она заметила, что банка мази у Марфы почти опустела и что плечи старухи начали ныть от сырости. Без всякого замечания она наполнила банку из своего запаса и поставила туда, где Марфа найдёт её, когда гости разойдутся. Непрерывная работа, тихая, как дыхание.</p>
+            <p>Когда сходка кончилась и Алексей ушёл со свахой, путь, который он предлагал, уже не лежал таким гладким. В следующие дни семья Кати говорила между собой с новой осторожностью. Предложение молодого человека не приняли и не отвергли резко — оно просто потеряло свою спешку и блеск. Кто-то говорил, что девушка обрела более тихую силу. Другие говорили лишь, что воздух становился яснее, пока Василиса была в комнате, и что вещи имели обыкновение показывать свой настоящий облик рядом с ней.</p>
+            <p>Старая женщина, глядя, как Василиса идёт домой по промёрзшей тропе с пустой корзиной, тихо сказала своей спутнице:</p>
+            <p>— В этой девушке есть ровный свет. Она смотрит на вещи так, как смотрит икона — тихо, но от неё ничего не скрыто.</p>
+            <p>Слова были мягкими, почти праздными. До Василисы они не дошли, а если и дошли — она приняла их так же, как принимает большую часть похвал: лёгким наклоном головы и возвращением к следующему делу.</p>
+            <p>В тот вечер лампада в её собственном красном углу горела ровным пламенем. Место отца было пусто: он снова ушёл в одну из тех долгих поездок, что в последнее время стали чаще. Дом держал обыкновенную тишину хорошо ухоженного места. Василиса накормила маленькую куклу крошкой хлеба и каплей чистой воды, потом на мгновение поставила её на лавку у икон. Кукла лежала ни тёплой, ни холодной — просто тихой. Василиса перекрестилась, как была научена, и взялась за починку, что ждала у печи.</p>
+            <p>Она не чувствовала ни гордости за дневное видение, ни тяжёлой ноши. Ремесло смотреть за маской было просто ещё одной формой того же внимательного отношения, какое она отдавала дереву, погоде и нуждам тех, кто рядом. Иногда ясность приносила лёгкое одиночество — так, как высокое чистое небо может казаться одиночее облаков. Она посидела с этим одиночеством дольше обычного, дав ему улечься, потом вернулась к работе рук. Тихое пламя внимания горело дальше без требования, и деревня, сама не зная почему, уже начинала поворачиваться к нему.</p>
+            <p>Снаружи иней закончил свою тонкую работу на каждой ветке и каждом подоконнике. Внутри искательница истинных теней продолжала обыкновенный вечер, кукла снова лежала в кармане, а свет лампады был ровным, маленьким и достаточным.</p>
+            </div>
           </div>
         </div>
       </li>
 
-      <!-- ELYRA, THE NIGHT BLOOM -->
-      <li class="chapter chapter--no-art" id="elyra" data-reveal>
-        <div class="chapter__head">
-          <div class="chapter__num">Fairy tale · December 2023</div>
-          <h3 class="chapter__title">Elyra, the Night Bloom</h3>
-          <p class="chapter__synopsis">
-            A twilight guardian of the Lysanthian woods, born of the evening's
-            first breath, meets a mortal who has only ever chased her shadow.
-          </p>
-          <button class="chapter__toggle" data-target="story-elyra" aria-expanded="false" aria-controls="story-elyra" data-label-expand="Read the story" data-label-collapse="Collapse story">
-            <span class="chapter__toggle-label">Read the story</span>
-            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
-          </button>
-        </div>
-        <div class="chapter__body" id="story-elyra" hidden>
-          <div class="chapter__body-inner">
-            <p>Whispers of amethyst and echoes of onyx swirled within the ether as Elyra, the Night Bloom, glided through the Lysanthian woods. Her being was a confluence of shadow and light, a testament to the twilight's enigma. Veils of the softest jade, each thread spun from the sighs of slumbering flowers, trailed behind her, their edges kissed by the caress of nightfall. Her existence was not penned in the annals of the mortals, for she was born of the evening's first breath and the closing of day's weary eyes.</p>
-            <p>In the midst of this ever-twilight forest, the trees themselves bore the midnight's hue, their leaves like star-sprinkled velvet against the firmament. Elyra, with her gaze deep as the void between stars, held dominion over these silent woods, where dreams took root and flourished under her silent watch.</p>
-            <p>As the guardian of the nocturne's secrets, she wore her mantle—a fabric interwoven with the essence of sleep and the cool embrace of night air. Her face, ethereal in its grace, was marked by pigments that held the glow of constellation maps, charting unseen worlds in a dance of celestial beauty. The mandala of colors upon her shoulders was not merely decoration but a sigil of her power, each hue a vow to the mysteries she kept.</p>
-            <p>This eve was unlike any other. A prophesy whispered by the ancients stirred within her soul—a foretelling of an encounter that would alter the threads of her fate. The night air hummed with a peculiar magic, a melody that resonated with Elyra's core. Compelled by this unseen force, she ventured beyond her sanctum, past the luminescent blooms and into the realm where reality and reverie blurred into one.</p>
-            <p>As she approached the boundary of her world, a luminous figure emerged from the shadows—a traveler of the dreamways, a mortal with eyes wide with wonder. He stood at the threshold of her realm, an emissary bearing the mark of the dreamweavers. In his gaze, she saw not fear but a kindred longing, a search for communion with the mysteries he had only traversed in his slumbers.</p>
-            <p>Elyra reached out, her fingers mere inches from the mortal's, and as their touch neared, the air thrummed with potential. This was the moment foretold, the weaving of a new story—a tapestry of dreams to be shared, of night's veiled splendor to be revealed to one who had only ever chased its shadow.</p>
-            <p>Together, they would embark on a journey through the hallowed groves and silent glades, where the whispers of the night bloomed into a symphony of starlight and secrets, and Elyra, the Night Bloom, would for the first time, reveal the full breadth of her realm to another soul.</p>
-          </div>
-        </div>
-      </li>
-
-      <!-- MAGGIE AND THE SHRIEKING THICKET -->
-      <li class="chapter chapter--no-art" id="maggie" data-reveal>
-        <div class="chapter__head">
-          <div class="chapter__num">Dark fantasy · December 2023</div>
-          <h3 class="chapter__title">Maggie and the Shrieking Thicket</h3>
-          <p class="chapter__synopsis">
-            The Warden walks her solitary patrol of a haunted wood, sealing the
-            unseen wounds that bleed darkness into her reality.
-          </p>
-          <button class="chapter__toggle" data-target="story-maggie" aria-expanded="false" aria-controls="story-maggie" data-label-expand="Read the story" data-label-collapse="Collapse story">
-            <span class="chapter__toggle-label">Read the story</span>
-            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
-          </button>
-        </div>
-        <div class="chapter__body" id="story-maggie" hidden>
-          <div class="chapter__body-inner">
-            <p>"Maggie, they called it the Shrieking Thicket, once upon a time," she mused aloud to herself, tracing the outline of a scar on the worn stock of her rifle. Maggie, a name as grounded as the earth she walked upon, a stark contrast to the eerie cloak of fog that shrouded the gnarled trees around her.</p>
-            <p>The Shrieking Thicket was a place of whispered horrors, where the wind howled through the trees like the anguished cries of the lost. It was here that Maggie, known simply as the Warden to the few who dared speak of her, made her solitary patrol.</p>
-            <p>She was the last line of defense in a world that had forgotten what it meant to be safe. The Thicket was her charge, a twisted labyrinth of supernatural malice that preyed on the unsuspecting. It was said that those who entered were either brave or foolish, but Maggie knew it was not bravery that kept her footsteps steady; it was necessity.</p>
-            <p>Maggie's days were spent tracking phantoms and sealing the unseen wounds that bled darkness into her reality. Each rift she closed was a small victory in an unending war, a war that had claimed everything but her resolve.</p>
-            <p>As she crept through the Shrieking Thicket, every sense was attuned to the unnatural silence that preceded the storm. This was no place for the weak-hearted, and Maggie's heart had long since learned to harden against fear.</p>
-            <p>Her story was one not of epic battles, but of enduring vigilance, a chronicle of whispered courage and the relentless pursuit of a peace that seemed as elusive as the morning mist.</p>
-          </div>
-        </div>
-      </li>
-
-      <!-- ECHOES OF TOMORROW — CHAPTER ONE -->
-      <li class="chapter chapter--no-art" id="echoes-of-tomorrow" data-reveal>
-        <div class="chapter__head">
-          <div class="chapter__num">Echoes of Tomorrow · Chapter One · December 2023</div>
-          <h3 class="chapter__title">Whispers in the Metropolis</h3>
-          <p class="chapter__synopsis">
-            An excerpt — the opening chapter of a science-fiction series in
-            progress. In New Terra, a cryptic message from the Decels turns a
-            gala into the first sign of a shadow war against the tide of progress.
-          </p>
-          <button class="chapter__toggle" data-target="story-echoes" aria-expanded="false" aria-controls="story-echoes" data-label-expand="Read the excerpt" data-label-collapse="Collapse excerpt">
-            <span class="chapter__toggle-label">Read the excerpt</span>
-            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
-          </button>
-        </div>
-        <div class="chapter__body" id="story-echoes" hidden>
-          <div class="chapter__body-inner">
-            <p>In the heart of New Terra, a city where the future was always bright, a grand gala unfolded beneath a dome of twinkling stars. The metropolis, a tapestry of neon and chrome, hummed with the promise of tomorrow. Its towering structures, clad in shimmering materials, stood as monuments to human achievement.</p>
-            <p>Dr. Adrian Vale, a figure of quiet contemplation amid the sea of vibrant personalities, navigated the gala with a scholar's curiosity. His mind, a repository of memetic theory and history, often wandered to the days of his early career, when a fateful encounter with a memetic artifact had set him on this path. That memory, etched deep in his psyche, was a constant reminder of the fine line between enlightenment and oblivion.</p>
-            <p>As Adrian moved through the crowd, the air was ripe with fragments of conversation, each a whisper of unease. Tales of distant planets, now shadows of their former selves, echoed through the corridors of power and privilege. The city's technological wonders, from hovering drones serving drinks to holographic displays showcasing achievements, seemed to hum a discordant tune tonight.</p>
-            <p>Suddenly, the room's ambiance shifted. The lights dimmed, and a hush fell like a curtain. But as the keynote speaker approached the podium, an unexpected spectacle seized the moment. Every screen around the room flickered to life, displaying a cryptic message from the Decels, a name spoken only in whispers until now. The message, brief yet foreboding, hinted at a shadow war against the tide of progress.</p>
-            <p>Adrian, amidst the gasps and murmurs of the elite, stood still, a sentinel amidst chaos. His eyes, usually a calm sea of knowledge, now mirrored the storm of realization brewing within. This was no mere theatrics; it was a harbinger of a conflict that had now dared to step into the light.</p>
-            <p>Excusing himself from the unsettled crowd, Adrian's thoughts were a whirlwind as he walked through New Terra's streets. The city, a fusion of organic and synthetic beauty, now whispered secrets in the wind. The gentle rustle of engineered trees mingled with the soft hum of neon, crafting a symphony of progress shadowed by doubt.</p>
-            <p>It was then he noticed Maya, alone on a bench, her gaze fixed on a holographic newsfeed replaying the gala's interruption. Her expression, a canvas of fear and fascination, spoke volumes. Adrian approached, his voice a soft intrusion into her contemplation. "It's unsettling, isn't it?"</p>
-            <p>Maya looked up, her eyes a mirror of the city's dual nature—technology and humanity intertwined. "Yes," she replied, her voice carrying the weight of understanding. "It's like watching a star, knowing it might one day collapse into a black hole."</p>
-            <p>Their conversation flowed, revealing Maya's world—a nexus of coding and virtual constructs. She spoke of her project to weave New Terra's communication networks into a tapestry of efficiency and harmony. Adrian found her perspective a refreshing contrast to his theoretical constructs, a reminder of the tangible threads that held their society together.</p>
-            <p>As they parted ways, Adrian felt a renewed sense of urgency. He needed to unravel the web of history and theory that might explain the Decels' enigmatic threat. His research, once a pursuit of knowledge, was now a race against an unseen clock.</p>
-            <p>Meanwhile, Elara, a shadow in the city's underbelly, moved with purpose. Known for her journalistic acumen, Elara sought the stories hidden in plain sight. Tonight, she was on the trail of whispers, the kind that spoke of unrest and rebellion. Her recorder, a digital confidant, captured every hushed word, every rumor that fluttered like a moth in the darkness.</p>
-            <p>Elara's quest was more than just a story; it was a search for truth in a city where truth was often cloaked in layers of illusion. As she listened to the murmurs of two citizens, their words laden with fear and speculation, Elara knew she was on the cusp of uncovering a narrative that could redefine the essence of New Terra.</p>
-          </div>
-        </div>
+      <!-- GROUP: THE FAERIE-COURT VERDICTS -->
+      <li class="chapters__group">
+        <div class="chapters__group-eyebrow">Faerie folklore</div>
+        <h3 class="chapters__group-title">The Faerie-Court Verdicts</h3>
+        <p class="chapters__group-note">Bracken-of-the-Index, notary to the Thorn Court, is sent through the hedge to judge which Court may claim three figures mortals think they know.</p>
       </li>
 
       <!-- THE HACKER -->
@@ -664,6 +687,131 @@
         </div>
       </li>
 
+      <!-- GROUP: WARDENS OF THE THRESHOLD -->
+      <li class="chapters__group">
+        <div class="chapters__group-eyebrow">Dark fantasy</div>
+        <h3 class="chapters__group-title">Wardens of the Threshold</h3>
+        <p class="chapters__group-note">Solitary guardians who keep the seams between worlds — mending tears, sealing wounds, holding the twilight edge of a haunted wood.</p>
+      </li>
+
+      <!-- THE GLOOMSTALKER -->
+      <li class="chapter chapter--no-art" id="gloomstalker" data-reveal>
+        <div class="chapter__head">
+          <div class="chapter__num">Dark fantasy · December 2023</div>
+          <h3 class="chapter__title">The Gloomstalker</h3>
+          <p class="chapter__synopsis">
+            A guardian of the threshold between worlds answers a summons to
+            mend a tear in the fabric of reality.
+          </p>
+          <button class="chapter__toggle" data-target="story-gloomstalker" aria-expanded="false" aria-controls="story-gloomstalker" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-gloomstalker" hidden>
+          <div class="chapter__body-inner">
+            <p>Under the crescent's glow, where stars dust the heavens and the forest breathes a misty sigh, a creature of fable finds its stride. The Gloomstalker, a legend whispered by the ancients, now manifests upon the path less trodden. Its eyes, ember-like, hold the secrets of a thousand years, piercing through the veil of darkness that hugs the earth. This night, the Gloomstalker is not just a myth told to frighten the young ones; it seeks the Silent Whisperer, an entity said to weave the fabric of reality through murmurs and soft cadences.</p>
+            <p>The forest around the Gloomstalker transforms with each of its thunderous steps, bending to a will that is as old as the tales themselves. The trees, ancient sentinels of the wood, lean away in a silent effort to respect the passage of such an enigmatic being. The ground underfoot, littered with the last autumn leaves and fallen branches, crunches softly, marking the passage of the Gloomstalker. This creature, with its shaggy mane and haunting presence, is not merely a beast, but a guardian of the threshold between worlds, a keeper of the balance that must be maintained.</p>
+            <p>The Silent Whisperer, a creature of light and shadow, has called upon the Gloomstalker this eve, a summoning that cannot be ignored. For within the forest, a disturbance has arisen; a tear in the fabric of reality, silent yet calamitous, threatens to unravel the threads that bind existence. It is this peril that the Gloomstalker seeks to confront, guided by an unspoken bond to the Whisperer, its eyes reflecting a determination that is as unwavering as the eternal stars above.</p>
+            <p>As the Gloomstalker moves through the forest, each being within its domain pauses, a silent acknowledgement of the unfolding story, a tale not yet fully told but felt by all. The Gloomstalker's journey is not one of predation, but of purpose, driven by the necessity to confront what lies beyond the tear, to protect the world that lies unknowingly in the balance.</p>
+            <p>Tonight, the forest holds its breath, the stars watch on, and the Gloomstalker, a creature of myth and might, ventures forth to mend the rending seams of reality, its story woven in the silence of the night.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- MAGGIE AND THE SHRIEKING THICKET -->
+      <li class="chapter chapter--no-art" id="maggie" data-reveal>
+        <div class="chapter__head">
+          <div class="chapter__num">Dark fantasy · December 2023</div>
+          <h3 class="chapter__title">Maggie and the Shrieking Thicket</h3>
+          <p class="chapter__synopsis">
+            The Warden walks her solitary patrol of a haunted wood, sealing the
+            unseen wounds that bleed darkness into her reality.
+          </p>
+          <button class="chapter__toggle" data-target="story-maggie" aria-expanded="false" aria-controls="story-maggie" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-maggie" hidden>
+          <div class="chapter__body-inner">
+            <p>"Maggie, they called it the Shrieking Thicket, once upon a time," she mused aloud to herself, tracing the outline of a scar on the worn stock of her rifle. Maggie, a name as grounded as the earth she walked upon, a stark contrast to the eerie cloak of fog that shrouded the gnarled trees around her.</p>
+            <p>The Shrieking Thicket was a place of whispered horrors, where the wind howled through the trees like the anguished cries of the lost. It was here that Maggie, known simply as the Warden to the few who dared speak of her, made her solitary patrol.</p>
+            <p>She was the last line of defense in a world that had forgotten what it meant to be safe. The Thicket was her charge, a twisted labyrinth of supernatural malice that preyed on the unsuspecting. It was said that those who entered were either brave or foolish, but Maggie knew it was not bravery that kept her footsteps steady; it was necessity.</p>
+            <p>Maggie's days were spent tracking phantoms and sealing the unseen wounds that bled darkness into her reality. Each rift she closed was a small victory in an unending war, a war that had claimed everything but her resolve.</p>
+            <p>As she crept through the Shrieking Thicket, every sense was attuned to the unnatural silence that preceded the storm. This was no place for the weak-hearted, and Maggie's heart had long since learned to harden against fear.</p>
+            <p>Her story was one not of epic battles, but of enduring vigilance, a chronicle of whispered courage and the relentless pursuit of a peace that seemed as elusive as the morning mist.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- ELYRA, THE NIGHT BLOOM -->
+      <li class="chapter chapter--no-art" id="elyra" data-reveal>
+        <div class="chapter__head">
+          <div class="chapter__num">Fairy tale · December 2023</div>
+          <h3 class="chapter__title">Elyra, the Night Bloom</h3>
+          <p class="chapter__synopsis">
+            A twilight guardian of the Lysanthian woods, born of the evening's
+            first breath, meets a mortal who has only ever chased her shadow.
+          </p>
+          <button class="chapter__toggle" data-target="story-elyra" aria-expanded="false" aria-controls="story-elyra" data-label-expand="Read the story" data-label-collapse="Collapse story">
+            <span class="chapter__toggle-label">Read the story</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-elyra" hidden>
+          <div class="chapter__body-inner">
+            <p>Whispers of amethyst and echoes of onyx swirled within the ether as Elyra, the Night Bloom, glided through the Lysanthian woods. Her being was a confluence of shadow and light, a testament to the twilight's enigma. Veils of the softest jade, each thread spun from the sighs of slumbering flowers, trailed behind her, their edges kissed by the caress of nightfall. Her existence was not penned in the annals of the mortals, for she was born of the evening's first breath and the closing of day's weary eyes.</p>
+            <p>In the midst of this ever-twilight forest, the trees themselves bore the midnight's hue, their leaves like star-sprinkled velvet against the firmament. Elyra, with her gaze deep as the void between stars, held dominion over these silent woods, where dreams took root and flourished under her silent watch.</p>
+            <p>As the guardian of the nocturne's secrets, she wore her mantle—a fabric interwoven with the essence of sleep and the cool embrace of night air. Her face, ethereal in its grace, was marked by pigments that held the glow of constellation maps, charting unseen worlds in a dance of celestial beauty. The mandala of colors upon her shoulders was not merely decoration but a sigil of her power, each hue a vow to the mysteries she kept.</p>
+            <p>This eve was unlike any other. A prophesy whispered by the ancients stirred within her soul—a foretelling of an encounter that would alter the threads of her fate. The night air hummed with a peculiar magic, a melody that resonated with Elyra's core. Compelled by this unseen force, she ventured beyond her sanctum, past the luminescent blooms and into the realm where reality and reverie blurred into one.</p>
+            <p>As she approached the boundary of her world, a luminous figure emerged from the shadows—a traveler of the dreamways, a mortal with eyes wide with wonder. He stood at the threshold of her realm, an emissary bearing the mark of the dreamweavers. In his gaze, she saw not fear but a kindred longing, a search for communion with the mysteries he had only traversed in his slumbers.</p>
+            <p>Elyra reached out, her fingers mere inches from the mortal's, and as their touch neared, the air thrummed with potential. This was the moment foretold, the weaving of a new story—a tapestry of dreams to be shared, of night's veiled splendor to be revealed to one who had only ever chased its shadow.</p>
+            <p>Together, they would embark on a journey through the hallowed groves and silent glades, where the whispers of the night bloomed into a symphony of starlight and secrets, and Elyra, the Night Bloom, would for the first time, reveal the full breadth of her realm to another soul.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- GROUP: FARTHER SHORES -->
+      <li class="chapters__group">
+        <div class="chapters__group-eyebrow">Science fiction &amp; cosmic horror</div>
+        <h3 class="chapters__group-title">Farther Shores</h3>
+        <p class="chapters__group-note">Two turns past the folktale: the opening of a science-fiction series, and a brief, cold descent into cosmic horror.</p>
+      </li>
+
+      <!-- ECHOES OF TOMORROW — CHAPTER ONE -->
+      <li class="chapter chapter--no-art" id="echoes-of-tomorrow" data-reveal>
+        <div class="chapter__head">
+          <div class="chapter__num">Echoes of Tomorrow · Chapter One · December 2023</div>
+          <h3 class="chapter__title">Whispers in the Metropolis</h3>
+          <p class="chapter__synopsis">
+            An excerpt — the opening chapter of a science-fiction series in
+            progress. In New Terra, a cryptic message from the Decels turns a
+            gala into the first sign of a shadow war against the tide of progress.
+          </p>
+          <button class="chapter__toggle" data-target="story-echoes" aria-expanded="false" aria-controls="story-echoes" data-label-expand="Read the excerpt" data-label-collapse="Collapse excerpt">
+            <span class="chapter__toggle-label">Read the excerpt</span>
+            <span class="chapter__toggle-icon" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="chapter__body" id="story-echoes" hidden>
+          <div class="chapter__body-inner">
+            <p>In the heart of New Terra, a city where the future was always bright, a grand gala unfolded beneath a dome of twinkling stars. The metropolis, a tapestry of neon and chrome, hummed with the promise of tomorrow. Its towering structures, clad in shimmering materials, stood as monuments to human achievement.</p>
+            <p>Dr. Adrian Vale, a figure of quiet contemplation amid the sea of vibrant personalities, navigated the gala with a scholar's curiosity. His mind, a repository of memetic theory and history, often wandered to the days of his early career, when a fateful encounter with a memetic artifact had set him on this path. That memory, etched deep in his psyche, was a constant reminder of the fine line between enlightenment and oblivion.</p>
+            <p>As Adrian moved through the crowd, the air was ripe with fragments of conversation, each a whisper of unease. Tales of distant planets, now shadows of their former selves, echoed through the corridors of power and privilege. The city's technological wonders, from hovering drones serving drinks to holographic displays showcasing achievements, seemed to hum a discordant tune tonight.</p>
+            <p>Suddenly, the room's ambiance shifted. The lights dimmed, and a hush fell like a curtain. But as the keynote speaker approached the podium, an unexpected spectacle seized the moment. Every screen around the room flickered to life, displaying a cryptic message from the Decels, a name spoken only in whispers until now. The message, brief yet foreboding, hinted at a shadow war against the tide of progress.</p>
+            <p>Adrian, amidst the gasps and murmurs of the elite, stood still, a sentinel amidst chaos. His eyes, usually a calm sea of knowledge, now mirrored the storm of realization brewing within. This was no mere theatrics; it was a harbinger of a conflict that had now dared to step into the light.</p>
+            <p>Excusing himself from the unsettled crowd, Adrian's thoughts were a whirlwind as he walked through New Terra's streets. The city, a fusion of organic and synthetic beauty, now whispered secrets in the wind. The gentle rustle of engineered trees mingled with the soft hum of neon, crafting a symphony of progress shadowed by doubt.</p>
+            <p>It was then he noticed Maya, alone on a bench, her gaze fixed on a holographic newsfeed replaying the gala's interruption. Her expression, a canvas of fear and fascination, spoke volumes. Adrian approached, his voice a soft intrusion into her contemplation. "It's unsettling, isn't it?"</p>
+            <p>Maya looked up, her eyes a mirror of the city's dual nature—technology and humanity intertwined. "Yes," she replied, her voice carrying the weight of understanding. "It's like watching a star, knowing it might one day collapse into a black hole."</p>
+            <p>Their conversation flowed, revealing Maya's world—a nexus of coding and virtual constructs. She spoke of her project to weave New Terra's communication networks into a tapestry of efficiency and harmony. Adrian found her perspective a refreshing contrast to his theoretical constructs, a reminder of the tangible threads that held their society together.</p>
+            <p>As they parted ways, Adrian felt a renewed sense of urgency. He needed to unravel the web of history and theory that might explain the Decels' enigmatic threat. His research, once a pursuit of knowledge, was now a race against an unseen clock.</p>
+            <p>Meanwhile, Elara, a shadow in the city's underbelly, moved with purpose. Known for her journalistic acumen, Elara sought the stories hidden in plain sight. Tonight, she was on the trail of whispers, the kind that spoke of unrest and rebellion. Her recorder, a digital confidant, captured every hushed word, every rumor that fluttered like a moth in the darkness.</p>
+            <p>Elara's quest was more than just a story; it was a search for truth in a city where truth was often cloaked in layers of illusion. As she listened to the murmurs of two citizens, their words laden with fear and speculation, Elara knew she was on the cusp of uncovering a narrative that could redefine the essence of New Terra.</p>
+          </div>
+        </div>
+      </li>
+
       <!-- THE YELLOW ROBE -->
       <li class="chapter" id="yellow-robe" data-reveal>
         <figure class="chapter__art">
@@ -725,7 +873,7 @@
 
 </main>
 
-<script src="assets/app.js?v=3"></script>
+<script src="assets/app.js?v=4"></script>
 <script src="assets/refresh.js"></script>
 <!-- Comments: client-only Supabase. Invisible until assets/comments-config.js is filled in. -->
 <script src="assets/comments-config.js"></script>

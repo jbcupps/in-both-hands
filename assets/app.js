@@ -54,6 +54,10 @@
     vasilisa: {
       ru: { title: "Тихое пламя Василисы", sub: "Читать по-русски", aria: "Читать «Тихое пламя Василисы» по-русски" },
       en: { title: "The Quiet Flame of Vasilisa", sub: "Read in English", aria: "Read “The Quiet Flame of Vasilisa” in English" }
+    },
+    seeker: {
+      ru: { title: "Искательница истинных теней", sub: "Читать по-русски", aria: "Читать «Искательница истинных теней» по-русски" },
+      en: { title: "The Seeker of True Shadows", sub: "Read in English", aria: "Read “The Seeker of True Shadows” in English" }
     }
   };
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {

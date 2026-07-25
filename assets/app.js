@@ -58,6 +58,10 @@
     seeker: {
       ru: { title: "Искательница истинных теней", sub: "Читать по-русски", aria: "Читать «Искательница истинных теней» по-русски" },
       en: { title: "The Seeker of True Shadows", sub: "Read in English", aria: "Read “The Seeker of True Shadows” in English" }
+    },
+    "black-host": {
+      ru: { title: "Когда пришло Чёрное Воинство", sub: "Читать по-русски", aria: "Читать «Когда пришло Чёрное Воинство и сгорело Высокое Место» по-русски" },
+      en: { title: "When the Black Host Came", sub: "Read in English", aria: "Read “When the Black Host Came and the High Place Burned” in English" }
     }
   };
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {

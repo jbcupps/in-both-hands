@@ -62,6 +62,10 @@
     "black-host": {
       ru: { title: "Когда пришло Чёрное Воинство", sub: "Читать по-русски", aria: "Читать «Когда пришло Чёрное Воинство и сгорело Высокое Место» по-русски" },
       en: { title: "When the Black Host Came", sub: "Read in English", aria: "Read “When the Black Host Came and the High Place Burned” in English" }
+    },
+    "living-water": {
+      ru: { title: "Дорога живой воды", sub: "Читать по-русски", aria: "Читать «Дорогу живой воды» по-русски" },
+      en: { title: "The Road of the Living Water", sub: "Read in English", aria: "Read “The Road of the Living Water” in English" }
     }
   };
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {

@@ -28,10 +28,13 @@ Two halves, both live:
 - Workflow: `.github/workflows/notify-readers.yml`
 - Trigger: **manual only** (`workflow_dispatch`). It cannot fire on a push,
   a deploy, or a schedule — so there are no surprise emails.
-- Recipients are fetched live from `notify_subscribers` (via the service-role
-  key) and merged with the optional legacy `NOTIFY_RECIPIENTS` secret, then
-  de-duplicated. Each reader gets an **individual** email via Gmail SMTP with
-  their own unsubscribe link — no shared BCC, no exposed addresses.
+- Recipients are fetched live from `notify_subscribers` via the `notify_list`
+  function, authenticated with `NOTIFY_LIST_SECRET` — a dedicated credential
+  that can read the subscriber list and do **nothing else** (the service-role
+  key never leaves Supabase). The list is merged with the optional legacy
+  `NOTIFY_RECIPIENTS` secret, then de-duplicated. Each reader gets an
+  **individual** email via Gmail SMTP with their own unsubscribe link — no
+  shared BCC, no exposed addresses.
 - A **dry run** checkbox on the run form counts recipients without sending.
 
 ## One-time setup
@@ -40,23 +43,20 @@ Two halves, both live:
    Google Account → Security → 2-Step Verification → App passwords → generate
    one for "Mail". Copy the 16-character value.
 
-2. **Get the Supabase service-role key**: Supabase dashboard → project
-   `nfaxjuiafyvfxjgcmvlk` → Project Settings → API keys → `service_role`.
-   This key bypasses row security — it lives **only** in GitHub secrets,
-   never in the repo.
-
-3. **Add repository secrets** (GitHub repo → Settings → Secrets and
+2. **Add repository secrets** (GitHub repo → Settings → Secrets and
    variables → Actions → New repository secret):
 
-   | Secret | Value |
-   | --- | --- |
-   | `GMAIL_USERNAME` | the Gmail address you send from (e.g. `jbcupps@gmail.com`) |
-   | `GMAIL_APP_PASSWORD` | the 16-character app password from step 1 |
-   | `SUPABASE_SERVICE_ROLE_KEY` | the service-role key from step 2 |
-   | `NOTIFY_RECIPIENTS` | *(optional)* comma-separated extra emails, e.g. friends you added by hand |
+   | Secret | Value | Status |
+   | --- | --- | --- |
+   | `NOTIFY_LIST_SECRET` | list-read credential (matches `private.notify_api` in Supabase) | ✅ set 2026-08-02 |
+   | `GMAIL_USERNAME` | the Gmail address you send from (e.g. `jbcupps@gmail.com`) | ⬜ needed before a real send |
+   | `GMAIL_APP_PASSWORD` | the 16-character app password from step 1 | ⬜ needed before a real send |
+   | `NOTIFY_RECIPIENTS` | *(optional)* comma-separated extra emails added by hand | ⬜ optional |
 
-   Until `SUPABASE_SERVICE_ROLE_KEY` is set, the workflow still runs but only
-   reaches the legacy `NOTIFY_RECIPIENTS` list, and says so in its log.
+   Dry runs only need `NOTIFY_LIST_SECRET`. Real sends also need the two
+   Gmail secrets. To rotate the list secret: insert a new value into
+   `private.notify_api` (see supabase/schema.sql) and update the GitHub
+   secret to match.
 
 ## Sending an announcement
 

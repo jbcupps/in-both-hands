@@ -113,3 +113,44 @@ revoke all on function public.notify_signup(text) from public;
 revoke all on function public.notify_unsubscribe(uuid) from public;
 grant execute on function public.notify_signup(text) to anon, authenticated;
 grant execute on function public.notify_unsubscribe(uuid) to anon, authenticated;
+
+-- ---------------------------------------------------------------------------
+-- Low-privilege list access for the notify-readers workflow (migration
+-- notify_list_rpc). The GitHub Action authenticates with a dedicated secret
+-- that can ONLY read the subscriber list via notify_list(); the service_role
+-- key is never stored outside Supabase. The secret value itself is inserted
+-- out-of-band (never committed):
+--   insert into private.notify_api (secret) values ('<random hex>')
+--   on conflict (id) do update set secret = excluded.secret, created_at = now();
+-- Rotate by re-running that insert and updating the NOTIFY_LIST_SECRET
+-- GitHub secret to match.
+
+create schema if not exists private;
+
+create table if not exists private.notify_api (
+  id      boolean primary key default true check (id),  -- single row
+  secret  text not null,
+  created_at timestamptz not null default now()
+);
+
+create or replace function public.notify_list(p_secret text)
+returns table (email text, unsubscribe_token uuid)
+language plpgsql
+security definer
+set search_path = public, private
+as $$
+begin
+  if p_secret is null or not exists (
+    select 1 from private.notify_api a where a.secret = p_secret
+  ) then
+    raise exception 'Not authorized.';
+  end if;
+  return query
+    select s.email, s.unsubscribe_token
+    from public.notify_subscribers s
+    order by s.created_at;
+end;
+$$;
+
+revoke all on function public.notify_list(text) from public;
+grant execute on function public.notify_list(text) to anon;

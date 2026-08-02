@@ -24,12 +24,35 @@ email sign-in from working end to end.
 
 The "Continue with Google" button renders but Google is not yet enabled as a
 provider (checked 2026-08-02: only `email` is active). Until then the button
-shows "Sign-in unavailable for this provider yet." To enable:
+shows "Sign-in unavailable for this provider yet."
 
-1. Google Cloud console → create an OAuth 2.0 Client ID (Web application).
-   - Authorized redirect URI: `https://nfaxjuiafyvfxjgcmvlk.supabase.co/auth/v1/callback`
-2. Supabase → Authentication → Providers → Google → paste client ID + secret,
-   enable, save.
+A dedicated GCP project **`litroom-auth`** (number 250980731534, account
+jbcupps@gmail.com) was created 2026-08-02 to hold the OAuth client and
+nothing else — no APIs, no billing. Consent-screen and client creation are
+Console-only (no gcloud/API path for external apps):
+
+1. Configure the consent screen:
+   https://console.cloud.google.com/auth/overview/create?project=litroom-auth
+   - App name `The Lit Room`, support + contact email `jbcupps@gmail.com`,
+     audience **External**.
+2. Create the client:
+   https://console.cloud.google.com/auth/clients/create?project=litroom-auth
+   - Type **Web application**, name `litroom-supabase`
+   - Authorized JavaScript origins: `https://www.thelitroom.com` and
+     `https://thelitroom.com`
+   - Authorized redirect URI:
+     `https://nfaxjuiafyvfxjgcmvlk.supabase.co/auth/v1/callback`
+   - Copy the client ID + secret it shows you.
+3. Publish the app (Testing → In production; with only basic identity
+   scopes there is no Google verification hurdle):
+   https://console.cloud.google.com/auth/audience?project=litroom-auth
+4. Supabase → Authentication → Providers → Google → enable, paste client ID
+   + secret, save:
+   https://supabase.com/dashboard/project/nfaxjuiafyvfxjgcmvlk/auth/providers
+
+The client only ever receives basic identity scopes (openid, email,
+profile) — Supabase requests nothing more, and no Google APIs are enabled
+in the project.
 
 ## Already done (no action needed)
 

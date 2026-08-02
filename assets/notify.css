@@ -1,0 +1,132 @@
+/* The Lit Room — "hear about new work" signup band + unsubscribe page.
+   Quiet, in the coming-soon card's register. Hidden until notify.js confirms
+   the backend is configured. */
+
+.notify {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-6);
+}
+
+.notify__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-5);
+  padding: var(--s-7);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper-2);
+}
+
+.notify__mark {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  color: var(--amber);
+  opacity: 0.85;
+}
+
+.notify__copy { flex: 1 1 auto; min-width: 0; }
+
+.notify__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-2);
+}
+
+.notify__text {
+  font-family: var(--body);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin: 0 0 var(--s-4);
+  max-width: 56ch;
+}
+
+.notify__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  max-width: 34rem;
+}
+
+.notify__email {
+  flex: 1 1 16rem;
+  min-width: 0;
+  box-sizing: border-box;
+  font-family: var(--ui);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.5rem 0.9rem;
+}
+.notify__email:focus { outline: none; border-color: var(--amber); }
+
+.notify__submit {
+  font-family: var(--ui);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+.notify__submit:hover { border-color: var(--amber); color: var(--amber); }
+.notify__submit:disabled { opacity: 0.5; cursor: default; }
+
+.notify__status {
+  font-family: var(--ui);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  margin: var(--s-3) 0 0;
+  min-height: 1.2em;
+}
+.notify__status--ok { color: var(--amber); }
+
+@media (max-width: 540px) {
+  .notify__inner { flex-direction: column; }
+}
+
+/* ---- unsubscribe.html ---------------------------------------------------- */
+
+.unsub {
+  max-width: var(--reading);
+  margin: 0 auto;
+  padding: var(--s-10) var(--s-6);
+  text-align: center;
+}
+.unsub__mark {
+  width: 40px;
+  height: 40px;
+  color: var(--amber);
+  opacity: 0.85;
+  margin: 0 auto var(--s-5);
+}
+.unsub__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: var(--text-2xl);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-3);
+}
+.unsub__text {
+  font-family: var(--body);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin: 0 auto var(--s-6);
+  max-width: 46ch;
+}
+.unsub__home {
+  font-family: var(--ui);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--amber);
+  padding-bottom: 2px;
+}
+.unsub__home:hover { color: var(--amber); }

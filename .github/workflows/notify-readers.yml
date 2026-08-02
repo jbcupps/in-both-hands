@@ -2,43 +2,114 @@ name: Notify readers of a new chapter
 
 # Manual trigger ONLY. This workflow never runs on its own — it sends no email
 # until you open the Actions tab, click "Run workflow", and fill in the title.
-# It also does nothing until the three repo secrets below are set
-# (see docs/notifications.md).
+# Recipients = everyone who signed up on the site (Supabase `notify_subscribers`)
+# merged with the optional legacy NOTIFY_RECIPIENTS secret. Each reader gets
+# their own email with their own unsubscribe link — no shared BCC.
+# Secrets used (see docs/notifications.md): GMAIL_USERNAME, GMAIL_APP_PASSWORD,
+# SUPABASE_SERVICE_ROLE_KEY, and optionally NOTIFY_RECIPIENTS.
 on:
   workflow_dispatch:
     inputs:
       chapter_title:
-        description: "What to announce (e.g. Chapter Five — Two Stops Past)"
+        description: "What to announce (e.g. Chapter Ten — working title)"
         required: true
       chapter_url:
         description: "Link for readers"
         required: false
-        default: "https://www.thelitroom.com/#chapters"
+        default: "https://www.thelitroom.com/#books"
+      dry_run:
+        description: "Dry run: count recipients, send nothing"
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   email:
     runs-on: ubuntu-latest
     steps:
-      - name: Send the digest
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: ${{ secrets.GMAIL_USERNAME }}
-          password: ${{ secrets.GMAIL_APP_PASSWORD }}
-          from: In Both Hands <${{ secrets.GMAIL_USERNAME }}>
-          # The visible recipient is you; readers are BCC'd so they never see
-          # each other's addresses. NOTIFY_RECIPIENTS is a comma-separated list.
-          to: ${{ secrets.GMAIL_USERNAME }}
-          bcc: ${{ secrets.NOTIFY_RECIPIENTS }}
-          subject: "In Both Hands — ${{ github.event.inputs.chapter_title }} is up"
-          body: |
-            A new chapter of In Both Hands is live.
+      - name: Send the announcement
+        shell: python
+        env:
+          GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_RECIPIENTS: ${{ secrets.NOTIFY_RECIPIENTS }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_URL: "https://nfaxjuiafyvfxjgcmvlk.supabase.co"
+          CHAPTER_TITLE: ${{ github.event.inputs.chapter_title }}
+          CHAPTER_URL: ${{ github.event.inputs.chapter_url }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          import json, os, smtplib, ssl, sys, time, urllib.request
+          from email.message import EmailMessage
 
-            ${{ github.event.inputs.chapter_title }}
-            ${{ github.event.inputs.chapter_url }}
+          title = os.environ["CHAPTER_TITLE"].strip()
+          url = (os.environ.get("CHAPTER_URL") or "").strip() or "https://www.thelitroom.com/#books"
+          dry_run = (os.environ.get("DRY_RUN") or "").lower() == "true"
 
-            — thelitroom.com
+          def mask(addr):
+              # a***@example.com — enough to recognize in logs, not enough to harvest.
+              name, _, dom = addr.partition("@")
+              return (name[:1] + "***@" + dom) if dom else "***"
 
-            (You're receiving this because you asked to hear when new chapters post.)
+          # --- Collect recipients: site signups first, then the legacy secret list.
+          recipients = {}  # email -> unsubscribe token (or None for legacy entries)
+
+          service_key = (os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or "").strip()
+          if service_key:
+              req = urllib.request.Request(
+                  os.environ["SUPABASE_URL"] + "/rest/v1/notify_subscribers?select=email,unsubscribe_token",
+                  headers={"apikey": service_key, "Authorization": "Bearer " + service_key},
+              )
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  for row in json.load(resp):
+                      recipients[row["email"].lower()] = row["unsubscribe_token"]
+              print(f"Site signups: {len(recipients)}")
+          else:
+              print("SUPABASE_SERVICE_ROLE_KEY not set - skipping site signups.")
+
+          legacy = [e.strip().lower() for e in (os.environ.get("NOTIFY_RECIPIENTS") or "").split(",") if e.strip()]
+          for e in legacy:
+              recipients.setdefault(e, None)
+          print(f"Total recipients after merging legacy list: {len(recipients)}")
+
+          if not recipients:
+              print("No recipients configured - nothing to send.")
+              sys.exit(1)
+
+          if dry_run:
+              print("Dry run: no email sent.")
+              sys.exit(0)
+
+          # --- Send one email per reader so each unsubscribe link is personal.
+          sender = os.environ["GMAIL_USERNAME"]
+          failures = []
+          ctx = ssl.create_default_context()
+          with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ctx, timeout=60) as smtp:
+              smtp.login(sender, os.environ["GMAIL_APP_PASSWORD"])
+              for i, (email, token) in enumerate(sorted(recipients.items())):
+                  if token:
+                      out = f"To stop these emails: https://www.thelitroom.com/unsubscribe.html?token={token}"
+                  else:
+                      out = "To stop these emails, just reply with the word 'stop'."
+                  msg = EmailMessage()
+                  msg["From"] = f"The Lit Room <{sender}>"
+                  msg["To"] = email
+                  msg["Subject"] = f"The Lit Room - {title} is up"
+                  msg.set_content(
+                      f"Something new is up at The Lit Room.\n\n"
+                      f"{title}\n{url}\n\n"
+                      f"- thelitroom.com\n\n"
+                      f"(You're receiving this because you asked to hear when new work posts.)\n"
+                      f"{out}\n"
+                  )
+                  try:
+                      smtp.send_message(msg)
+                      print(f"Sent {i + 1}/{len(recipients)}: {mask(email)}")
+                  except smtplib.SMTPException as exc:
+                      failures.append(email)
+                      print(f"FAILED {mask(email)}: {exc}")
+                  time.sleep(1)  # be polite to Gmail
+
+          print(f"Done: {len(recipients) - len(failures)} sent, {len(failures)} failed.")
+          if failures:
+              sys.exit(1)

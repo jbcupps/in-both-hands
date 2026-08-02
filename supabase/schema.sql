@@ -1,6 +1,8 @@
--- In Both Hands — comments schema
+-- The Lit Room — Supabase schema (comments + notify signups)
 -- Run this once in the Supabase dashboard: SQL Editor → New query → paste → Run.
 -- Safe to re-run (uses IF NOT EXISTS / OR REPLACE where possible).
+-- Applied to project nfaxjuiafyvfxjgcmvlk as migrations
+-- `comments_schema` and `notify_subscribers` (2026-08-02).
 
 create extension if not exists pgcrypto;
 
@@ -48,3 +50,66 @@ create policy "admin full access"
 
 -- Live updates on the page.
 alter publication supabase_realtime add table public.comments;
+
+-- ===========================================================================
+-- Reader notification signups ("Hear when something new goes up")
+-- ===========================================================================
+-- The table is reachable ONLY through the two SECURITY DEFINER functions
+-- below (plus the service role). No select/insert/update/delete for anon or
+-- authenticated: emails can never be listed from the browser.
+
+create table if not exists public.notify_subscribers (
+  id                uuid primary key default gen_random_uuid(),
+  email             text not null unique check (char_length(email) <= 320),
+  unsubscribe_token uuid not null unique default gen_random_uuid(),
+  created_at        timestamptz not null default now()
+);
+
+comment on table public.notify_subscribers is
+  'Reader emails registered on thelitroom.com for new-chapter notifications.';
+
+alter table public.notify_subscribers enable row level security;
+revoke all on table public.notify_subscribers from anon, authenticated;
+
+-- Sign up. Always succeeds for a valid address (duplicate signups are a
+-- silent no-op, so the endpoint never reveals who is already on the list).
+create or replace function public.notify_signup(p_email text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_email text := lower(trim(p_email));
+begin
+  if v_email is null
+     or char_length(v_email) > 320
+     or v_email !~ '^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$' then
+    raise exception 'That does not look like an email address.';
+  end if;
+  -- Safety valve: a personal reader list should never approach this.
+  if (select count(*) from public.notify_subscribers) >= 5000 then
+    raise exception 'Signups are closed right now.';
+  end if;
+  insert into public.notify_subscribers (email) values (v_email)
+  on conflict (email) do nothing;
+end;
+$$;
+
+-- Unsubscribe by the secret token from the email link.
+create or replace function public.notify_unsubscribe(p_token uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  delete from public.notify_subscribers where unsubscribe_token = p_token;
+  return found;
+end;
+$$;
+
+revoke all on function public.notify_signup(text) from public;
+revoke all on function public.notify_unsubscribe(uuid) from public;
+grant execute on function public.notify_signup(text) to anon, authenticated;
+grant execute on function public.notify_unsubscribe(uuid) to anon, authenticated;

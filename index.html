@@ -17,6 +17,7 @@
 
 <link rel="stylesheet" href="assets/styles.css" />
 <link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/notify.css" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
 <!-- Vercel Analytics (Web Analytics + Speed Insights) -->
@@ -198,6 +199,31 @@
   </div>
 </section>
 
+<!-- GET NOTIFIED (stays hidden until assets/comments-config.js is filled in) -->
+<section id="notify" class="notify" aria-label="Hear about new work" data-notify hidden>
+  <div class="notify__inner">
+    <svg class="notify__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect x="7" y="13" width="26" height="17" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <path d="M8 15 L20 24 L32 15" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="6" r="1.6" fill="currentColor"/>
+    </svg>
+    <div class="notify__copy">
+      <p class="notify__title">Hear when something new goes up</p>
+      <p class="notify__text">
+        Chapters and stories post irregularly. Leave an email and I’ll send a
+        short note when they do — a title, a link, nothing else. Every email
+        carries its own unsubscribe link.
+      </p>
+      <form class="notify__form">
+        <input class="notify__email" type="email" required autocomplete="email"
+               placeholder="you@email.com" aria-label="Email address" />
+        <button class="notify__submit" type="submit">Notify me</button>
+      </form>
+      <p class="notify__status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="footer__inner">
@@ -226,5 +252,8 @@
 
 <script src="assets/app.js?v=5"></script>
 <script src="assets/refresh.js"></script>
+<!-- Notify signup: client-only Supabase. Invisible until assets/comments-config.js is filled in. -->
+<script src="assets/comments-config.js"></script>
+<script src="assets/notify.js"></script>
 </body>
 </html>

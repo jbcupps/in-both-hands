@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unsubscribe — The Lit Room</title>
+<meta name="description" content="Stop receiving new-work notifications from The Lit Room." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#1a1d22" />
+
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500,700,400i&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/notify.css" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+<header class="nav" aria-label="Primary">
+  <a href="index.html" class="nav__brand" aria-label="The Lit Room — home">
+    <svg class="nav__logo" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <path d="M20 13 Q13 10 7 12 V29 Q13 27 20 30 Q27 27 33 29 V12 Q27 10 20 13 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+      <path d="M20 13 V30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="20" cy="6" r="1.6" fill="currentColor"/>
+    </svg>
+    <span class="nav__wordmark">The Lit Room</span>
+  </a>
+</header>
+
+<main>
+  <section class="unsub">
+    <svg class="unsub__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect x="7" y="13" width="26" height="17" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <path d="M8 15 L20 24 L32 15" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="6" r="1.6" fill="currentColor"/>
+    </svg>
+    <h1 class="unsub__title" id="unsub-title">One moment…</h1>
+    <p class="unsub__text" id="unsub-text">Taking you off the list.</p>
+    <a class="unsub__home" href="index.html">Back to The Lit Room</a>
+  </section>
+</main>
+
+<script src="assets/comments-config.js"></script>
+<script>
+(function () {
+  var title = document.getElementById("unsub-title");
+  var text = document.getElementById("unsub-text");
+  var cfg = window.IBH_COMMENTS || {};
+  var token = new URLSearchParams(window.location.search).get("token");
+
+  function show(t, x) { title.textContent = t; text.textContent = x; }
+
+  if (!cfg.SUPABASE_URL || !cfg.SUPABASE_ANON_KEY || !token) {
+    show(
+      "This link is incomplete.",
+      "It’s missing its key. If you’re still getting emails, reply to one and I’ll take you off by hand."
+    );
+    return;
+  }
+
+  fetch(cfg.SUPABASE_URL + "/rest/v1/rpc/notify_unsubscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", apikey: cfg.SUPABASE_ANON_KEY },
+    body: JSON.stringify({ p_token: token })
+  })
+    .then(function (res) {
+      // A malformed token fails the uuid cast and comes back 400 — treat it
+      // the same as an unknown token rather than as an outage.
+      if (res.status === 400) return false;
+      if (!res.ok) throw new Error("bad status");
+      return res.json();
+    })
+    .then(function (removed) {
+      if (removed === true) {
+        show("You’re off the list.", "No more emails from The Lit Room. Thanks for reading along.");
+      } else {
+        show(
+          "That link wasn’t recognized.",
+          "It may have been used already. If you’re still getting emails, reply to one and I’ll take you off by hand."
+        );
+      }
+    })
+    .catch(function () {
+      show(
+        "Something went wrong.",
+        "Couldn’t reach the list just now. Reply to any notification email and I’ll take you off by hand."
+      );
+    });
+})();
+</script>
+</body>
+</html>

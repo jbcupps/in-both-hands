@@ -66,6 +66,10 @@
     "living-water": {
       ru: { title: "Дорога живой воды", sub: "Читать по-русски", aria: "Читать «Дорогу живой воды» по-русски" },
       en: { title: "The Road of the Living Water", sub: "Read in English", aria: "Read “The Road of the Living Water” in English" }
+    },
+    "golden-cage": {
+      ru: { title: "Золотая клетка и имя, которое она не хотела назвать", sub: "Читать по-русски", aria: "Читать «Золотую клетку и имя, которое она не хотела назвать» по-русски" },
+      en: { title: "The Golden Cage and the Name She Would Not Claim", sub: "Read in English", aria: "Read “The Golden Cage and the Name She Would Not Claim” in English" }
     }
   };
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {

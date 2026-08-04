@@ -44,6 +44,8 @@
   <nav class="nav__links">
     <a href="#chapters">Chapters</a>
     <a href="/">The Lit Room</a>
+    <!-- Revealed by notify.js alongside the signup band it points at. -->
+    <a class="nav__notify" href="#notify" data-notify hidden>Get notified</a>
   </nav>
 </header>
 
@@ -57,7 +59,7 @@
       <div class="hero__frame-text" aria-hidden="true">
         <div class="hero__frame-overline">A novel</div>
         <div class="hero__frame-title">In Both Hands</div>
-        <div class="hero__frame-author">Jimmy</div>
+        <div class="hero__frame-author">justjim</div>
       </div>
     </div>
   </div>
@@ -65,7 +67,7 @@
   <div class="hero__copy" data-reveal>
     <div class="overline">Book one of a series in progress</div>
     <h1 class="hero__title"><span class="i">In Both</span><span class="ii">Hands</span></h1>
-    <p class="hero__byline">A novel by <strong>Jimmy</strong></p>
+    <p class="hero__byline">A novel by <strong>justjim</strong></p>
     <p class="hero__lede">
       A quiet urban fantasy set in the Ohio River Valley in the autumn of
       2025. A long-term-care insurance adjuster in Pittsburgh, a woman in
@@ -78,7 +80,10 @@
       <div><span class="meta__k">Setting</span><span class="meta__v">Pittsburgh · Wheeling · Chicago</span></div>
       <div><span class="meta__k">Time</span><span class="meta__v">November, 2025</span></div>
     </div>
-    <a href="#chapters" class="cta">Read the chapters <span aria-hidden="true">↓</span></a>
+    <div class="hero__actions">
+      <a href="#chapters" class="cta">Read the chapters <span aria-hidden="true">↓</span></a>
+      <a href="#notify" class="cta-quiet" data-notify hidden>Hear when the next chapter goes up <span aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 <!-- CHAPTERS -->
@@ -884,7 +889,7 @@
     </div>
     <p class="footer__disclaimer">
       Working drafts. Unedited. Pre-publication. All text and illustrations
-      © Jimmy. Please do not redistribute without permission.
+      © justjim. Please do not redistribute without permission.
     </p>
     <p class="footer__colophon">
       Set in Boska and Source Serif 4. Illustrations generated to art

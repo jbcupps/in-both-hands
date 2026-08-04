@@ -174,11 +174,15 @@ hr { border: 0; }
 }
 .nav__links a:hover { color: var(--ink); }
 .nav__links a:hover::after { right: 0; }
+/* The signup link carries the accent so it reads as an offer, not a section. */
+.nav__links a.nav__notify { color: var(--amber); }
 
 @media (max-width: 720px) {
   .nav { padding: var(--s-3) var(--s-4); }
   .nav__links { gap: var(--s-4); font-size: var(--text-xs); }
   .nav__links a:nth-child(n+4) { display: none; }
+  /* The signup link is the point of the nav on a phone — keep it past the cut. */
+  .nav__links a.nav__notify:nth-child(n+4) { display: inline-block; }
 }
 
 /* -------------------------------------------------------------------------
@@ -353,6 +357,29 @@ hr { border: 0; }
   background: var(--ink);
   color: var(--paper);
   transform: translateY(-1px);
+}
+
+/* Secondary pull toward the signup band — quieter than the pill so it never
+   competes with the primary "read" action beside it. */
+a.cta-quiet {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--ui);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+a.cta-quiet:hover { color: var(--amber); border-bottom-color: var(--amber); }
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  flex-wrap: wrap;
 }
 
 @media (max-width: 880px) {

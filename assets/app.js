@@ -70,6 +70,10 @@
     "golden-cage": {
       ru: { title: "Золотая клетка и имя, которое она не хотела назвать", sub: "Читать по-русски", aria: "Читать «Золотую клетку и имя, которое она не хотела назвать» по-русски" },
       en: { title: "The Golden Cage and the Name She Would Not Claim", sub: "Read in English", aria: "Read “The Golden Cage and the Name She Would Not Claim” in English" }
+    },
+    "safety-of-the-cage": {
+      ru: { title: "Борьба и безопасность клетки", sub: "Читать по-русски", aria: "Читать «Борьбу и безопасность клетки» по-русски" },
+      en: { title: "The Struggle and the Safety of the Cage", sub: "Read in English", aria: "Read “The Struggle and the Safety of the Cage” in English" }
     }
   };
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {

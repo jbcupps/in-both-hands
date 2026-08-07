@@ -1,2 +1,6 @@
 .vercel
 /images/
+
+# Raw story-art exports. The published art is the re-encoded story-*.jpg
+# beside them; these originals stay on disk but out of the repo.
+assets/images/ChatGPT Image *.png

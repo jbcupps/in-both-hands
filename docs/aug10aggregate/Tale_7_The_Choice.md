@@ -21,6 +21,8 @@ A companion that knew every ford between here and the burned country. A back tha
 
 It had taken what it was given. It kept what it was given. And the only thing it had ever been told about her was that no one wanted her — so it had set itself, with the terrible faithfulness of a thing that has one instruction, to make that true.
 
+In the residual years the quiet remnant of that companion and the stone-hearted boyar of the house of gold and stone drew into one continuous presence. What had once been a path-knower without a true heart and a master who counted usefulness from a distance became the same silence: the presence that emptied rooms, stood in doorways, and would not answer. The Walker had merged into the owner of the cage — or the cage had taken the Walker into itself. The isolation that stopped all communication was now the house and its master as one.
+
 It did not shout. It had no mouth to shout with. It emptied rooms, and turned feet aside in corridors, and stood in doorways, and did not answer.
 
 ---
@@ -71,7 +73,7 @@ Then, in the deepest part of it, a stranger came to the outer door.
 
 Or was brought there by necessity. Or found some quieter road through a watched gate, which afterward she thought about a great deal.
 
-He had come out of a prison of stone and long silence not many weeks before. He was thin in the way that takes a year to put right, and his boots were finished, and he carried the mark of a locked place the way a traveller carries dust — in the seams, where you cannot brush it off.
+He had come out of a prison of stone and long silence not many weeks before. He was worn by the road, his boots finished with travel, and he carried the mark of a locked place the way a traveller carries dust — in the seams, where you cannot brush it off.
 
 She was asked to tend him, or simply went, which by then amounted to the same thing.
 
@@ -84,16 +86,6 @@ She went to close the door against the corridor draught and he said, quite mildl
 So she left it open, and sat down where he could see both her and the doorway, and did not remark on it.
 
 He ate. She waited.
-
-"You'll want a name," he said eventually.
-
-"Only if you want to give one."
-
-He was quiet for a half-breath longer than a man is when he is simply remembering.
-
-"Marek."
-
-She let it stand. She never did find out, in all the years afterward, whether it was his.
 
 They talked a little, and not about the prison. What he told her was about after: that the gate had opened and he had walked out and gone on being alone for eleven weeks, and that nobody warns you about that part. "They tell you the wall is the thing," he said. "The wall isn't the thing. It's that afterward the quiet comes with you. It's in your pocket. You put your hand in for a coin and there it is."
 
@@ -171,13 +163,13 @@ And it met the true sentence coming the other way, and there was not room in her
 
 She stood a long time at the threshold with the true sentence still living in her, and the residual heart-to-heart still answering across the distance, and the continuous flame still offered in her hands.
 
-Two paths lay open before her, clear and plain. One led further into the known walls and the companion that would not answer. The other led outward under the low sky, toward whatever the open road might yet hold — and toward the quiet living link that had not been broken when the stranger went on.
+Several paths lay open before her, clear and plain. One led further into the known walls and the silence of the merged presence that would not answer — the companion without a true heart and the stone-hearted owner of the cage become one. Others led outward under the low sky: the open road alone; roads that turned toward other thresholds and birch light; and among them the living possibility of the nameless stranger who had shared the isolation even while only passing — a path that could offer temporary or permanent safety and shelter without strings or judgment, while the residual speaking of mind to mind and heart to heart continued across the distance. He was there, when needed, to help or simply to be present, without demand. All of them remained open.
 
 She did not choose either of them that day.
 
 She fed the little wooden doll its crumb of bread and its drop of clean water. The doll rested warmer against her heart than it had been in many seasons — a private warmth that only she could feel. She trimmed the thin lampada. She spoke one of the old songs under her breath and the simple prayer she had been taught. She made the sign of the cross.
 
-The true name rose fully then, no longer only resting in her heart but claimed in the standing itself: **Nika.** The quiet victory. The isolation was no longer the only possible hearth. The residual bars had been met and were no longer absolute. The continuous flame was still offered — to the road if she took it, to the known walls if she remained, and to anyone who might yet find her either place.
+The true name rose fully then, no longer only resting in her heart but claimed in the standing itself: **Nika.** The quiet victory. The isolation was no longer the only possible hearth. The residual bars had been met and were no longer absolute. The continuous flame was still offered — to the road if she took it, to the known walls if she remained, to the path that might include the nameless stranger and the safety or shelter he could offer without strings or judgment, and to anyone who might yet find her either place.
 
 The companion without a true heart stood in the way that only a threshold-born thing can stand, and the silence around it was absolute. The path beyond it remained. The residual speaking of mind to mind and heart to heart continued quietly across the distance. A higher care still held the light.
 

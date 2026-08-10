@@ -21,9 +21,11 @@
   text-align: center;
 }
 .vol-title__flame {
+  display: flex;
+  justify-content: center;
   color: var(--amber);
   filter: drop-shadow(0 0 12px var(--amber-glow));
-  margin: 0 auto var(--s-6);
+  margin: 0 0 var(--s-6);
   transform-origin: 50% 90%;
   animation: lamp-flicker 3.4s var(--ease) infinite;
 }
@@ -289,8 +291,12 @@
 /* The nav twin: the same switch, small enough to ride along all the way down
    a volume this long. */
 .nav__lang {
+  /* .nav__links stretches its children by default, which would blow the pill up
+     into a circle as tall as the tallest wrapped link beside it. */
+  align-self: center;
   font-family: var(--ui);
   font-size: var(--text-xs);
+  line-height: 1.2;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
@@ -320,6 +326,13 @@
 }
 
 @media (max-width: 720px) {
+  /* The nav carries one link too many for a phone once the language switch is
+     in it. The brand already goes home, and the tales-one-at-a-time link lives
+     at the foot of the volume, so both give way to Contents and the switch. */
+  .nav__links a[href="short-stories.html"],
+  .nav__links a[href="/"] { display: none; }
+  .nav__lang { padding: var(--s-1) var(--s-3); letter-spacing: 0.1em; }
+
   .vol-title { padding: var(--s-8) var(--s-5) var(--s-7); }
   .vol-contents { padding: var(--s-7) var(--s-5) var(--s-8); }
   .vol-body { padding: 0 var(--s-5) var(--s-8); }

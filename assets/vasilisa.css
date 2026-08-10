@@ -1,0 +1,329 @@
+/* =========================================================================
+   The Quiet Flame of Vasilisa — the seven tales gathered as one volume.
+
+   Layered on assets/styles.css, which supplies the palette, type scale and
+   the shared nav/footer. Everything here is scoped to the volume page, so
+   nothing in this file can reach short-stories.html.
+   ========================================================================= */
+
+/* The volume swaps whole blocks of language in and out. Several of them are
+   flex or grid containers, whose display would otherwise win over the user
+   agent's [hidden] rule and leave both tongues on the page at once. */
+[hidden] { display: none !important; }
+
+/* -------------------------------------------------------------------------
+   Title page
+   ------------------------------------------------------------------------- */
+.vol-title {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--s-10) var(--s-6) var(--s-9);
+  text-align: center;
+}
+.vol-title__flame {
+  color: var(--amber);
+  filter: drop-shadow(0 0 12px var(--amber-glow));
+  margin: 0 auto var(--s-6);
+  transform-origin: 50% 90%;
+  animation: lamp-flicker 3.4s var(--ease) infinite;
+}
+.vol-title__flame svg { width: 26px; height: 36px; display: block; }
+.vol-title__overline {
+  font-family: var(--ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 500;
+  margin-bottom: var(--s-5);
+}
+.vol-title__name {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 auto var(--s-6);
+  max-width: 16em;
+}
+.vol-title__rule {
+  width: 84px;
+  height: 1px;
+  background: var(--rule);
+  margin: 0 auto var(--s-6);
+}
+.vol-title__lede {
+  font-family: var(--body);
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--ink-mute);
+  max-width: 34rem;
+  margin: 0 auto var(--s-7);
+  font-style: italic;
+}
+.vol-title .lang-switch { justify-content: center; margin: 0; }
+
+/* -------------------------------------------------------------------------
+   Contents
+   ------------------------------------------------------------------------- */
+.vol-contents {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-6) var(--s-9);
+  border-top: 1px solid var(--rule);
+}
+.vol-contents__title {
+  font-family: var(--ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 var(--s-6);
+}
+.vol-contents__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+.vol-contents__list li + li { border-top: 1px solid var(--rule); }
+.vol-contents__link {
+  display: grid;
+  grid-template-columns: 3.4rem 1fr;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-2);
+  transition: background var(--dur-fast) var(--ease),
+              padding-left var(--dur-fast) var(--ease);
+}
+.vol-contents__link:hover,
+.vol-contents__link:focus-visible {
+  background: var(--paper-2);
+  padding-left: var(--s-4);
+  outline: none;
+}
+.vol-contents__num {
+  font-family: var(--ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  color: var(--amber);
+  font-weight: 500;
+}
+.vol-contents__name {
+  font-family: var(--display);
+  font-size: var(--text-lg);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* -------------------------------------------------------------------------
+   The tales
+   ------------------------------------------------------------------------- */
+.vol-body {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--s-6) var(--s-9);
+}
+.tale {
+  padding-top: var(--s-9);
+  border-top: 2px solid var(--rule);
+  margin-top: var(--s-9);
+}
+.tale:first-child { margin-top: 0; }
+/* Scroll-margin keeps a linked tale clear of the sticky nav. */
+.tale, .vol-contents { scroll-margin-top: 5rem; }
+
+.tale__art {
+  max-width: 340px;
+  margin: 0 auto var(--s-7);
+}
+.tale__art img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--paper-3);
+  border-radius: 2px;
+  filter: contrast(1.02) saturate(0.92);
+  box-shadow: 0 18px 35px -22px rgba(26, 29, 34, 0.4);
+}
+.tale__head {
+  max-width: var(--reading);
+  margin: 0 auto var(--s-7);
+  text-align: center;
+}
+.tale__num {
+  font-family: var(--ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 500;
+  margin-bottom: var(--s-3);
+}
+.tale__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.tale__body {
+  max-width: var(--reading);
+  margin: 0 auto;
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.78;
+  color: var(--ink-soft);
+}
+.tale__body p {
+  margin: 0 0 var(--s-4);
+  text-align: left;
+  hyphens: auto;
+}
+.tale__body em { font-style: italic; color: var(--ink); }
+.tale__body strong { font-weight: 600; color: var(--ink); }
+
+/* An opening capital for each tale, as a printed volume would set it. */
+.tale__body .lang-block > p:first-child::first-letter {
+  font-family: var(--display);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.88;
+  padding: 0.04em 0.08em 0 0;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.tale__body .section-break {
+  border: 0;
+  height: var(--s-6);
+  margin: var(--s-5) 0;
+  display: block;
+  text-align: center;
+}
+.tale__body .section-break::after {
+  content: "·   ·   ·";
+  font-family: var(--display);
+  color: var(--ink-fade);
+  letter-spacing: 0.4em;
+  font-size: 1.2rem;
+}
+
+/* Foot of the volume: where the conversation about each tale lives. */
+.vol-end {
+  max-width: var(--reading);
+  margin: 0 auto;
+  padding: var(--s-9) var(--s-6);
+  text-align: center;
+  border-top: 1px solid var(--rule);
+}
+.vol-end__text {
+  font-family: var(--body);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin: 0 0 var(--s-4);
+}
+
+/* -------------------------------------------------------------------------
+   The language switch — the lamp-lit toggle, and its compact nav twin
+   ------------------------------------------------------------------------- */
+.lang-switch { display: flex; justify-content: flex-end; margin: 0 0 var(--s-6); }
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-5) var(--s-3) var(--s-4);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background:
+    radial-gradient(130% 150% at 16% 50%, var(--amber-glow), transparent 62%),
+    var(--paper-2);
+  color: var(--ink);
+  transition: border-color var(--dur) var(--ease),
+              background var(--dur) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  border-color: var(--amber);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px -18px var(--amber);
+  outline: none;
+}
+.lang-toggle__flame {
+  display: inline-flex;
+  color: var(--amber);
+  filter: drop-shadow(0 0 5px var(--amber-glow));
+  transform-origin: 50% 90%;
+  animation: lamp-flicker 3.4s var(--ease) infinite;
+}
+.lang-toggle__flame svg { width: 15px; height: 21px; display: block; }
+.lang-toggle__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: left;
+  line-height: 1.1;
+}
+.lang-toggle__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.06rem;
+  letter-spacing: 0.01em;
+}
+.lang-toggle__sub {
+  font-family: var(--ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+}
+
+/* The nav twin: the same switch, small enough to ride along all the way down
+   a volume this long. */
+.nav__lang {
+  font-family: var(--ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--amber);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: var(--s-2) var(--s-4);
+  background: transparent;
+  transition: border-color var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease);
+}
+.nav__lang:hover,
+.nav__lang:focus-visible {
+  border-color: var(--amber);
+  background: var(--amber-glow);
+  outline: none;
+}
+
+@keyframes lamp-flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  46% { opacity: 0.86; transform: scale(0.97, 1.03); }
+  72% { opacity: 0.95; transform: scale(1.02, 0.99); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lang-toggle__flame,
+  .vol-title__flame { animation: none; }
+}
+
+@media (max-width: 720px) {
+  .vol-title { padding: var(--s-8) var(--s-5) var(--s-7); }
+  .vol-contents { padding: var(--s-7) var(--s-5) var(--s-8); }
+  .vol-body { padding: 0 var(--s-5) var(--s-8); }
+  .tale { padding-top: var(--s-8); margin-top: var(--s-8); }
+  .tale__art { max-width: 260px; }
+  .vol-contents__link { grid-template-columns: 2.6rem 1fr; gap: var(--s-3); }
+}

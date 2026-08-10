@@ -74,6 +74,10 @@
     "safety-of-the-cage": {
       ru: { title: "Борьба и безопасность клетки", sub: "Читать по-русски", aria: "Читать «Борьбу и безопасность клетки» по-русски" },
       en: { title: "The Struggle and the Safety of the Cage", sub: "Read in English", aria: "Read “The Struggle and the Safety of the Cage” in English" }
+    },
+    "the-choice": {
+      ru: { title: "Выбор", sub: "Читать по-русски", aria: "Читать «Выбор» по-русски" },
+      en: { title: "The Choice", sub: "Read in English", aria: "Read “The Choice” in English" }
     }
   };
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {

@@ -1,4 +1,4 @@
-# Chapter Seven — Mount Calvary
+**Chapter Seven**
 
 I woke at the Colonial Motor Inn before it was light and lay in the bed and did not move for a while. The room was the room of a motel that had been built in 1962 and kept up since but not changed. There was a heater under the window that had run in the night and was not running now. There was a painting of a covered bridge screwed to the wall above the dresser so it could not be taken. There was the smell of the cleaner they used and under it the smell of every person who had slept in the room before me, which is a thing motels have and houses do not.
 
@@ -7,8 +7,6 @@ The brow pressure had been there since Pittsburgh. It was there when I woke. I h
 I got up when the light came. I was at the window with the curtain in my hand when the bird hit it.
 
 It was not a hard sound. It was the sound of something with hollow bones meeting glass, which is a sound that is soft and final at the same time. I opened the curtain the rest of the way and looked down. There was nothing on the walk. There was no bird stunned on the concrete and no bird dead in the strip of grass. There was the lot and the cars and the sign with the two unlit letters and no bird anywhere. I stood and looked for it longer than the thing was worth. Then I let the curtain go and went to shave.
-
----
 
 The lawyer's office was downtown in a building that had been a bank. You could see it had been a bank from the floor and the height of the ceiling and the brass around the doors. The firm had three names on the glass and the man I had come to see was none of the three. He was a younger man the firm kept for the small work, the wills and the closings, and he came out to the waiting room himself to bring me back, which I understood later was its own kind of answer.
 
@@ -34,9 +32,7 @@ I did not know what I did. I thought she meant I had come a long way for someone
 
 "She asked first, though. That was the whole of it with her. The asking."
 
-And then she did the thing the woman in the waiting room does, which is she gave me a small closed smile and sat back down with her folder and was finished with me, and the moment was over before I had hold of it. I stood another second. I thought: she means Maggie was a good nurse. A good nurse asks before she does the thing to your body, before she turns you or moves the line or wakes you for the count. *She asked first.* I thought it was a kindness about a nurse. I went out into the cold and let the door close and did not think about it again that day, and the woman was right, and I would not understand how right for a long time.
-
----
+And then she did the thing the woman in the waiting room had done: a small closed smile, and she sat back down with her folder and was finished with me, and the moment was over before I had hold of it. I stood another second. I thought: she means Maggie was a good nurse. A good nurse asks before she does the thing to your body, before she turns you or moves the line or wakes you for the count. *She asked first.* I thought it was a kindness about a nurse. I went out into the cold and let the door close and did not think about it again that day, and the woman was right, and I would not understand how right for a long time.
 
 The landlord's name was Hladek. Carol Hladek. I had her number from Beth too. I called her from the car and she answered on the fourth ring sounding like a woman who answered the phone all day and did not like to.
 
@@ -47,8 +43,6 @@ I said I could. There was nothing else to say. It might have been the truth, all
 The building was a brick four-unit on a street that ran up away from the river, two stories, a door at the side for the upstairs. I parked across the street and did not get out for a while and then I got out and stood on the far sidewalk and looked up. There were four windows on the second floor that I could see from where I stood. Two of them would have been hers and two of them the neighbor's and I did not know which two were which. There was no light in any of them. There was a plant in one of the windows that might have been dead or might have been a plant that did not need much, and I could not tell from the street, and I stood there working out whether a plant in a window was alive as though it mattered, as though I would be graded on it.
 
 I called Helen from the sidewalk. She picked up and asked was I there and I said I was there, I was standing outside the building, and she asked what it was like and I started to tell her and the call dropped. The screen said the call had ended. It had been two minutes and forty seconds. I called back. She picked up and said *we got cut off* and I said *I know* and started again to tell her about the building and the call dropped a second time. Three minutes, the two calls together, and twice the line had simply stopped. I stood with the phone in my hand and looked at it. One bar of signal, then three, then one. I did not call a third time. I texted her that the service was bad and I would call from the motel. She texted back a thumbs up, which Helen had learned to do that year and was proud of, and I put the phone in my pocket and looked up at the windows one more time and got in the car.
-
----
 
 I had not eaten. There was a diner two streets over that I had passed twice, a long low place with a counter and booths and a sign that had been new in about 1975, and I went in and sat at the counter because a man alone sits at the counter.
 
@@ -65,8 +59,6 @@ She stopped.
 I watched her decide not to finish it. It was not a dramatic thing. It was a woman about to name a place and then not naming it, the way you do when the name brings the rest of it up and you are working a Tuesday lunch and cannot afford the rest of it. She closed her mouth on the first sound of the word and turned it into wiping the counter and said, instead, "She was a nice lady. I'm sorry for your loss," and went to the register because a man had stood up to pay.
 
 I ate the eggs. The end of the word she had not said sat in the room with me and I did not pick it up. I have thought since that I heard the first letter of it. I have thought I am making that up. I paid and left two dollars under the edge of the plate and went out to the car, and it was past two, and the light was already starting to do the thing November light does in the afternoon in a river valley, which is to go thin and copper and start leaving before you are ready.
-
----
 
 I had not been to a cemetery in fifteen years. I want to set that down plainly. I had not stood at a grave since my aunt Rita went in the ground in Greensburg in the fall of 2010 and I had arranged in the years since, without ever saying it to myself, to not be where graves were. I sent the cards. I made the calls. I found, every time, the work thing or the road thing or the timing thing that meant I came to the lunch after and not the cemetery before. I had a gift for it. I had not known until I drove out the Mount Calvary Road that afternoon that it was a gift I had been using my whole life.
 

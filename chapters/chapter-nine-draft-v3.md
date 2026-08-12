@@ -72,13 +72,13 @@ I did not know how to give it back. That was the thing I understood sitting ther
 
 So I stopped. I got up.
 
-I went to the bar and paid for the man's beer along with mine, which was a small and stupid thing that did not undo anything, and I did it anyway, and I told the bartender not to tell him. He looked at me a second longer than the paying called for — the way the young man had not been looked at, and the way I now was — and said he wouldn't.
+I went to the bar and paid for the man's beer along with mine. It was a small and stupid thing that did not undo anything. I did it anyway, and I told the bartender not to tell him. He looked at me a second longer than the paying called for — the way the young man had not been looked at, and the way I now was — and said he wouldn't.
 
 ---
 
 Outside it had gotten colder still. I walked back toward the motel with my hands in the pockets of the coat and my collar up. The streetlights along that stretch were the orange kind, and two of them, as I came under them, buzzed and dropped and came back, one and then the other, the way a light does when it is old. I did not stop for them.
 
-In the room I sat on the end of the bed with the coat still on and called Helen. She had been asleep a little and came awake in the middle of the first sentence, the way she did. She asked about the drive, meaning the trip, meaning was I all right. I said I was. We talked a while about nothing. It had snowed in Lower Burrell and not much, and she had been out on the walk with the boot cast on, and the neighbor's boy had done the salt. The call did not drop. We talked about the weather.
+In the room I sat on the end of the bed with the coat still on and called Helen. She had been asleep a little and came awake in the middle of the first sentence, the way she did. She asked about the drive, meaning the trip, meaning was I all right. I said I was. We talked a while about nothing. It had snowed in Lower Burrell and not much, and she had been out on the walk with her arm in the sling, which she is not supposed to be doing on ice, and the neighbor's boy had done the salt. The call did not drop. We talked about the weather.
 
 When I hung up I did not turn on the television.
 

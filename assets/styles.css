@@ -593,10 +593,11 @@ a.cta-quiet:hover { color: var(--amber); border-bottom-color: var(--amber); }
   filter: contrast(1.02) saturate(0.92);
   box-shadow: 0 18px 35px -22px rgba(26,29,34,0.4);
 }
-/* Thirteen's art is the widest of the set, and the centred crop cut the bank of
-   mailboxes off the left edge — the one thing the chapter opens on. Hold the
-   crop to the left so the boxes and the envelope stay in the frame. */
-#chapter-13 .chapter__art img { object-position: left center; }
+/* Thirteen's art carries the chapter at both edges — the bank of mailboxes and
+   the envelope on the left, the hawk on the light pole at the right — and the
+   4/5 frame could not hold both ends at once. Give it a frame at the source's
+   own 6/5 and the whole picture survives uncropped. */
+#chapter-13 .chapter__art img { aspect-ratio: 6 / 5; }
 
 .chapter__num {
   font-family: var(--ui);
